@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { Jost, Inter, Josefin_Sans } from "next/font/google";
+import NextTopLoader from "nextjs-toploader";
+
 import "./globals.css";
+import NavBar from "@/components/MainSections/NavBar";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -11,6 +15,24 @@ const geistMono = localFont({
   src: "./fonts/GeistMonoVF.woff",
   variable: "--font-geist-mono",
   weight: "100 900",
+});
+
+// Add Jost font
+const jost = Jost({
+  subsets: ["latin"],
+  variable: "--font-jost",
+});
+
+// Add Inter font
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+});
+
+// Add Josefin Sans font
+const josefinSans = Josefin_Sans({
+  subsets: ["latin"],
+  variable: "--font-josefin-sans",
 });
 
 export const metadata: Metadata = {
@@ -26,8 +48,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${jost.variable} ${inter.variable} ${josefinSans.variable} antialiased bg-white`}
       >
+        <NextTopLoader
+          color="#2299DD"
+          height={4}
+          easing="ease"
+          template='<div class="bar" role="bar"><div class="peg"></div></div> '
+        />
+        <NavBar/>
         {children}
       </body>
     </html>
