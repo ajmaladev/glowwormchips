@@ -1,0 +1,34 @@
+{
+    "categories": [
+      {
+        "id": 10234,
+        "name": "Biscuits",
+        "image": "/category/biscuits.svg"
+      },
+      {
+        "id": 15789,
+        "name": "Dry Fruits",
+        "image": "/category/dry-fruits.svg"
+      },
+      {
+        "id": 23456,
+        "name": "Banana chips",
+        "image": "/category/banana-chips.svg"
+      },
+      {
+        "id": 34567,
+        "name": "Murukku",
+        "image": "/category/murukku.svg"
+      },
+      {
+        "id": 45678,
+        "name": "Tapioca chips",
+        "image": "/category/tapioca-chips.svg"
+      },
+      {
+        "id": 56789,
+        "name": "More",
+        "image": "/category/more-categories.svg"
+      }
+    ]
+  }

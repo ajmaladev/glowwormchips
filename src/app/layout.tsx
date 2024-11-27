@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { Jost, Inter, Josefin_Sans } from "next/font/google";
+import { Jost, Inter, Josefin_Sans, Montserrat } from "next/font/google";
 import NextTopLoader from "nextjs-toploader";
 
 import "./globals.css";
@@ -35,6 +35,12 @@ const josefinSans = Josefin_Sans({
   variable: "--font-josefin-sans",
 });
 
+// Add Montserrat font
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  variable: "--font-montserrat",
+});
+
 export const metadata: Metadata = {
   title: "Glow Worm Chips",
   description: "Discover delicious, crunchy snacks at Glow Worm Chips. Your one-stop shop for tasty chips, crispy treats, and mouthwatering snacks delivered to your doorstep.",
@@ -48,7 +54,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${jost.variable} ${inter.variable} ${josefinSans.variable} antialiased bg-white`}
+        className={`${geistSans.variable} ${geistMono.variable} ${jost.variable} ${inter.variable} ${josefinSans.variable} ${montserrat.variable} antialiased bg-white`}
       >
         <NextTopLoader
           color="#2299DD"
