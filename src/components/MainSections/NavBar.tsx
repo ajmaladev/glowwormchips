@@ -9,7 +9,7 @@ export default function NavBar() {
       {/* Logo */}
       <div className="w-20 h-[58px] justify-center items-center flex">
         <Image
-          src="/gw-logo.png"
+          src="/logo.svg"
           alt="Logo"
           width={96}
           height={64}

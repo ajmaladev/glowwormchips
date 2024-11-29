@@ -1,5 +1,5 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, Transition } from "framer-motion";
 import { ReactNode } from "react";
 
 interface BouncyMotionProps {
@@ -7,13 +7,15 @@ interface BouncyMotionProps {
   className?: string;
   style?: React.CSSProperties;
   initialY?: number;
+  transition?: Transition;
 }
 
 export const BouncyMotion = ({ 
   children, 
   className, 
   style,
-  initialY = -50 
+  initialY = -50,
+  transition
 }: BouncyMotionProps) => {
   return (
     <motion.div
@@ -21,8 +23,8 @@ export const BouncyMotion = ({
       style={style}
       initial={{ y: initialY, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      whileHover={{ scale: 1.1 }}
-      transition={{
+      whileHover={{ scale: 1.05 }}
+      transition={transition || {
         type: "spring",
         duration: 0.8,
         bounce: 0.5,

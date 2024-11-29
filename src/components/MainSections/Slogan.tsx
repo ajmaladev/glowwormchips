@@ -12,11 +12,11 @@ export default function Slogan() {
       <Image
         width={1000}
         height={452}
-        className="w-full h-[452px] absolute inset-0"
+        className="w-full absolute inset-0"
         src="/slogan-bg.svg"
         alt="slogan background"
       />
-      <div className="absolute inset-0 flex flex-col items-center justify-center px-4">
+      <div className="absolute inset-0 flex flex-col items-center justify-center">
         <h1 className="text-4xl font-black font-montserrat leading-[60.47px] tracking-[4.02px] bg-gradient-to-r from-[#f85741] to-[#f5a644] text-transparent bg-clip-text text-start max-w-[1033px]">
           GLOW WORM OFFERS AN EXTENSIVE SELECTION OF CHIPS FLAVORS
         </h1>
