@@ -14,7 +14,7 @@ const cards = [
           <Image
             width={1920}
             height={1080}
-            alt="EVERY CHIP TELLS A TALE OF FLAVOR"
+            alt="Premium potato chips with unique flavors - Handcrafted gourmet snacks"
             className="w-full h-full object-cover pointer-events-none"
             src="/carousel/carousel-1.svg"
             priority
@@ -33,7 +33,7 @@ const cards = [
           <Image
             width={1920}
             height={1080} 
-            alt="WE CHOOSE THE FINEST FOR YOU "
+            alt="Carefully selected premium ingredients for exceptional quality snacks"
             className="w-full h-full object-cover pointer-events-none"
             src="/carousel/carousel-2.svg"
             unoptimized
@@ -51,7 +51,7 @@ const cards = [
           <Image
             width={1920}
             height={1080}
-            alt="EVERY SNACK SPARKS JOY"
+            alt="Delightful artisanal snacks that bring happiness to every bite"
             className="w-full h-full object-cover pointer-events-none"
             src="/carousel/carousel-3.svg"
             unoptimized
@@ -97,7 +97,7 @@ export function MainCarousel() {
       {/* Dots */}
       <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
         <div className="relative bg-white/20 rounded-full backdrop-blur-[5.26px] px-3.5 py-1">
-          <div className="flex gap-3">
+          <div className="flex gap-3" role="tablist" aria-label="Carousel Navigation">
             {cards.map((_, index) => (
               <button
                 key={index}
@@ -108,6 +108,9 @@ export function MainCarousel() {
                     ? "bg-white"
                     : "bg-[#aeaeae] hover:bg-white/70"
                 )}
+                role="tab"
+                aria-selected={currentIndex === index}
+                aria-label={`Slide ${index + 1}`}
               />
             ))}
           </div>

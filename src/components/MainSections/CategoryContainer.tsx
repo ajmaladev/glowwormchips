@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { BouncyMotion } from "../Globals/BouncyMotion";
 
-export default function CategoryContainer() {
+export default function CategoryContainer({ id }: { id?: number }) {
   const [categories, setCategories] = useState<Category[]>([]);
 
   useEffect(() => {
@@ -14,7 +14,8 @@ export default function CategoryContainer() {
       try {
         const response = await fetch('/data.json');
         const data: CategoriesData = await response.json();
-        setCategories(data.categories);
+        const filteredCategories = id ? data.categories.filter(category => category.id !== id) : data.categories;
+        setCategories(filteredCategories);
       } catch (error) {
         console.error('Error loading categories:', error);
       }
@@ -24,35 +25,39 @@ export default function CategoryContainer() {
   }, []);
 
   return (
-    <div className="w-[1440px] h-[395px] relative">
-      <div className="left-[374px] top-[35px] absolute text-center text-[#0c3614] text-4xl font-medium font-['Jost'] tracking-widest">
-        WE GOT BEST VARIETY OF DELICIOUS
-      </div>
+    <section 
+      className="w-full mx-auto px-4 py-16 relative"
+      aria-label="Food Categories"
+    >
+      <h1 className="text-center text-[#0c3614] text-2xl md:text-4xl font-medium font-['Jost'] tracking-widest mb-8">
+        {id ? "EXPLORE MORE DELICIOUS OPTIONS" : "WE GOT BEST VARIETY OF DELICIOUS"}
+      </h1>
       
-      {categories.map((category: Category, index: number) => {
-        const leftPositions = [97, 312, 527, 756, 979, 1199];
-        
-        return (
+      <div className={`grid grid-cols-2 md:grid-cols-3 lg:grid-cols-${id ? 5 : 6} gap-4 justify-items-center py-8`}>
+        {categories.map((category: Category) => (
           <BouncyMotion
             key={category.id}
-            className="h-[188px] absolute flex-col justify-start items-center inline-flex"
-            style={{ left: `${leftPositions[index]}px`, top: '138px' }}
+            className="flex flex-col items-center"
           >
-            <Link href={`/${category.id}`}>
+            <Link 
+              href={`/${category.id}`}
+              aria-label={`View ${category.name} category`}
+            >
               <Image
                 width={155}
                 height={141}
-                className="w-[155px] h-[141px]"
+                className="w-full max-w-[155px] h-auto object-contain"
                 src={category.image}
-                alt={category.name}
+                alt={`${category.name} category thumbnail`}
+                priority={true}
               />
-              <h2 className="self-stretch text-center text-[#0c3614] text-[27.36px] font-normal font-['Jost']">
+              <h2 className="text-center text-[#0c3614] text-xl md:text-[27.36px] font-normal font-['Jost'] mt-2">
                 {category.name}
               </h2>
             </Link>
           </BouncyMotion>
-        );
-      })}
-    </div>
+        ))}
+      </div>
+    </section>
   );
 }

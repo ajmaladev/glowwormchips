@@ -5,6 +5,7 @@ import NextTopLoader from "nextjs-toploader";
 
 import "./globals.css";
 import NavBar from "@/components/MainSections/NavBar";
+import { Footer } from "@/components/MainSections/Footer";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -64,6 +65,7 @@ export default function RootLayout({
         />
         <NavBar/>
         {children}
+        <Footer />
       </body>
     </html>
   );
