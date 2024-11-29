@@ -13,7 +13,7 @@ export default function Description({
       aria-label="Category Description"
     >
       <article 
-        className="w-4/5 p-16 text-white text-base md:text-lg lg:text-3xl font-normal font-['Jost'] leading-[21px] md:leading-[26px] lg:leading-[55px] tracking-wide"
+        className="w-[85%]md:w-4/5 p-16 text-white text-base md:text-lg lg:text-3xl font-normal font-['Jost'] leading-[21px] md:leading-[26px] lg:leading-[55px] tracking-wide"
       >
         <p>{description}</p>
       </article>

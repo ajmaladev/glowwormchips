@@ -7,7 +7,7 @@ interface HeroSectionProps {
 export default function HeroSection({ title, sub_description, color }: HeroSectionProps) {
   return (
     <section 
-      className="flex-col justify-center w-full gap-6 items-center py-4 md:py-6 lg:py-8 inline-flex px-4 md:px-6 lg:px-12"
+      className="flex-col justify-center w-full gap-6 items-center py-4 md:py-6 lg:py-8 mt-[104px] inline-flex px-4 md:px-6 lg:px-12"
       aria-label="Category hero section"
     >
       <h1 
