@@ -33,7 +33,7 @@ export default function CategoryContainer({ id }: { id?: number }) {
         {id ? "EXPLORE MORE DELICIOUS OPTIONS" : "WE GOT BEST VARIETY OF DELICIOUS"}
       </h1>
       
-      <div className={`grid grid-cols-2 md:grid-cols-3 lg:grid-cols-${id ? 5 : 6} gap-4 justify-items-center py-8`}>
+      <div className={`grid grid-cols-3 ${id ? "lg:grid-cols-5" : "lg:grid-cols-6"} justify-items-center py-8`}>
         {categories.map((category: Category) => (
           <BouncyMotion
             key={category.id}
