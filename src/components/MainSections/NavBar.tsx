@@ -1,13 +1,11 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { FiSearch } from "react-icons/fi";
 import {
   Drawer,
-  DrawerContent,
-  DrawerTitle,
   DrawerTrigger,
-  DrawerHeader,
-  DrawerDescription,
 } from "@/components/ui/drawer";
 import {
   Sheet,
@@ -16,110 +14,118 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import SearchContent from "./SearchContent";
 
 export default function NavBar() {
+  const scrollToSection = (elementId: string) => (e: React.MouseEvent) => {
+    e.preventDefault();
+    const element = document.querySelector(elementId);
+    const elementPosition = element?.getBoundingClientRect().top ?? 0;
+    const offsetPosition = elementPosition + window.scrollY - 100;
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth"
+    });
+  };
+
   return (
-    <div className="w-full h-[104px] bg-white fixed top-0 z-50 flex items-center justify-between px-6 lg:px-20">
+    <nav className="w-full h-[104px] bg-white fixed top-0 z-50 flex items-center justify-between px-6 lg:px-20" role="navigation" aria-label="Main navigation">
       {/* Logo */}
-      <Link href="/" className="flex items-center">
+      <Link href="/" className="flex items-center" aria-label="Go to homepage">
         <Image
           src="/logo.svg"
-          alt="Logo"
+          alt="Glow Worm Logo"
           width={96}
           height={64}
           className="cursor-pointer"
+          priority
         />
       </Link>
 
-      {/* Navigation Links - now in a single container */}
-      <div className="md:flex w-full invisible md:visible justify-around mx-9 items-center gap-8">
-        <Link className="text-black text-xs md:text-base lg:text-lg font-normal font-['Jost']" href="/">
-          HOME
-        </Link>
-        <Link
-          className="text-black text-xs md:text-base lg:text-lg font-normal font-['Jost']"
-          href="/contact"
+      {/* Navigation Links */}
+      <div className="md:flex w-full invisible md:visible justify-around mx-9 items-center gap-8" role="menubar">
+        <Link 
+          className="text-black text-xs font-normal font-['Jost'] hover:text-[#0c3614] transition-colors duration-200" 
+          href="/"
+          role="menuitem"
         >
-          CONTACT
+          <h2>Home</h2>
         </Link>
-        <Link
-          className="text-black text-xs md:text-base lg:text-lg font-normal font-['Jost']"
-          href="/about"
+        <Link 
+          className="text-black text-xs font-normal font-['Jost'] hover:text-[#0c3614] transition-colors duration-200" 
+          href="#footer"
+          role="menuitem"
+          onClick={scrollToSection('#footer')}
         >
-          ABOUT
+          <h2>Contact</h2>
+        </Link>
+        <Link 
+          className="text-black text-xs font-normal font-['Jost'] hover:text-[#0c3614] transition-colors duration-200" 
+          href="#about"
+          role="menuitem"
+          onClick={scrollToSection('#about')}
+        >
+          <h2>About</h2>
         </Link>
       </div>
 
       {/* Search and Mobile Menu container */}
       <div className="flex items-center gap-4">
         <Drawer>
-          <DrawerTrigger>
-            <FiSearch className="w-6 h-6 text-gray-500" />
+          <DrawerTrigger aria-label="Open search" className="p-2 rounded-full hover:bg-gray-100 transition-colors">
+            <FiSearch className="w-6 h-6 text-gray-500" aria-hidden="true" />
           </DrawerTrigger>
-          <DrawerContent>
-            <DrawerHeader>
-              <DrawerTitle>Search Products</DrawerTitle>
-              <DrawerDescription>
-                Search for products across all categories
-              </DrawerDescription>
-            </DrawerHeader>
-            <div className="p-4">
-              <input
-                type="text"
-                placeholder="Search..."
-                className="w-full p-2 text-lg border rounded-md outline-none focus:ring-2 focus:ring-[#0c3614] focus:border-transparent"
-                autoFocus
-                aria-label="Search input"
-              />
-            </div>
-          </DrawerContent>
+          <SearchContent/>
         </Drawer>
 
-        {/* Mobile Menu Button - only visible on mobile */}
+        {/* Mobile Menu Button */}
         <Sheet>
-          <SheetTrigger className="md:hidden">
-            <div className="flex flex-col gap-3.5 p-2">
+          <SheetTrigger className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors" aria-label="Open mobile menu">
+            <div className="flex flex-col gap-3.5" aria-hidden="true">
               <div className="w-[37px] h-1 bg-[#0c3614]/50 rounded-xl" />
               <div className="w-[37px] h-1 bg-[#0c3614]/50 rounded-xl" />
             </div>
           </SheetTrigger>
           <SheetContent side="right" className="w-[300px] sm:w-[400px]">
             <SheetHeader>
-              <SheetTitle aria-label="GLOW WORM">
-                <Link href="/" className="flex items-center">
+              <SheetTitle>
+                <Link href="/" className="flex items-center" aria-label="Go to homepage">
                   <Image
                     src="/logo.svg"
-                    alt="Logo"
+                    alt="Glow Worm Logo"
                     width={96}
                     height={64}
                     className="cursor-pointer"
+                    priority
                   />
                 </Link>
               </SheetTitle>
             </SheetHeader>
-            <nav className="flex flex-col gap-4 mt-8">
+            <nav className="flex flex-col gap-4 mt-8" role="navigation" aria-label="Mobile navigation">
               <Link
                 className="text-black text-lg font-normal font-['Jost'] hover:text-[#0c3614]"
                 href="/"
               >
-                HOME
+                <h2>Home</h2>
               </Link>
               <Link
                 className="text-black text-lg font-normal font-['Jost'] hover:text-[#0c3614]"
-                href="/contact"
+                href="#footer"
+                onClick={scrollToSection('#footer')}
               >
-                CONTACT
+                <h2>Contact</h2>
               </Link>
               <Link
                 className="text-black text-lg font-normal font-['Jost'] hover:text-[#0c3614]"
-                href="/about"
+                href="#about"
+                onClick={scrollToSection('#about')}
               >
-                ABOUT
+                <h2>About</h2>
               </Link>
             </nav>
           </SheetContent>
         </Sheet>
       </div>
-    </div>
+    </nav>
   );
 }

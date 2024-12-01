@@ -17,8 +17,10 @@ export interface Product {
   image: string;
   alt: string;
   categoryId: number;
+  tags?: string[];
 }
 
 export type CategoriesData = {
   categories: Category[];
+  products: Product[];
 };

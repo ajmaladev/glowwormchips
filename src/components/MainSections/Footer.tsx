@@ -56,6 +56,7 @@ export const Footer = () => {
       className="p-8 bg-[#2d2d2d] min-h-screen flex flex-col items-center justify-between"
       role="contentinfo"
       aria-label="Site footer"
+      id="footer"
     >
       {/* Add JSON-LD structured data */}
       <script

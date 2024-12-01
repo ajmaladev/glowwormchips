@@ -79,7 +79,8 @@
         "name": "Banana chips",
         "image": "/category/banana-chips/normal-banana-chips.svg",
         "alt": "Fresh handcrafted Kerala plantain chips",
-        "categoryId": 23456
+        "categoryId": 23456,
+        "tags": []
       },
       {
         "id": 10002,
@@ -121,7 +122,9 @@
         "name": "Malabar Murukku",
         "image": "/category/murukku/malabar-murukku.svg",
         "alt": "Authentic Malabar style spiral snacks",
-        "categoryId": 34567
+        "categoryId": 34567,
+        "tags": ["Best Seller"]
+
       },
       {
         "id": 10008,
@@ -198,14 +201,17 @@
         "name": "Tomato Tapioca Chips",
         "image": "/category/tapioca/tomato-tapioca-chips.svg",
         "alt": "Zesty tomato flavored cassava chips",
-        "categoryId": 45678
+        "categoryId": 45678,
+        "tags": ["Best Seller"]
       },
       {
         "id": 10019,
         "name": "Spicy Tapioca Chips",
         "image": "/category/tapioca/spicy-tapioca-chips.svg",
         "alt": "Peppery seasoned tapioca wafers",
-        "categoryId": 45678
+        "categoryId": 45678,
+        "tags": ["Best Seller"]
+
       },
       {
         "id": 10020,
@@ -226,7 +232,8 @@
         "name": "Irani Kismis",
         "image": "/category/dry-fruits/irani-kissmiss.svg",
         "alt": "Imported Persian golden raisins",
-        "categoryId": 15789
+        "categoryId": 15789,
+        "tags": ["Best Seller"]
       },
       {
         "id": 10024,
@@ -296,14 +303,16 @@
         "name": "Jackfruit chips",
         "image": "/category/many-others/jack-fruit-pack.svg",
         "alt": "Sweet yellow jackfruit crisps",
-        "categoryId": 56789
+        "categoryId": 56789,
+        "tags": ["Best Seller"]
       },
       {
         "id": 10034,
         "name": "Kerala Mixture",
         "image": "/category/many-others/kerala-mixture.svg",
         "alt": "Spicy mixed savory snack blend",
-        "categoryId": 56789
+        "categoryId": 56789,
+        "tags": ["Best Seller"]
       },
       {
         "id": 10035,
