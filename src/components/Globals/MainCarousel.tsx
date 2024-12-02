@@ -10,8 +10,8 @@ const cards = [
     id: 1,
     content: (
       <Image
-        width={1920}
-        height={1080}
+        width={0}
+        height={0}
         alt="Artisanal Premium Potato Chips - Handcrafted in Small Batches with Natural Ingredients"
         title="Premium Gourmet Potato Chips"
         className="w-full h-full object-cover pointer-events-none"
@@ -26,8 +26,8 @@ const cards = [
     id: 2,
     content: (
       <Image
-        width={1920}
-        height={1080}
+        width={0}
+        height={0}
         alt="Organic Premium Ingredients - Sourced from Local Farmers for Superior Quality Snacks"
         title="Premium Quality Ingredients"
         className="w-full h-full object-cover pointer-events-none"
@@ -41,8 +41,8 @@ const cards = [
     id: 3,
     content: (
       <Image
-        width={1920}
-        height={1080}
+        width={0}
+        height={0}
         alt="Gourmet Artisanal Snacks - Crafted with Love for an Exceptional Snacking Experience"
         title="Artisanal Snack Collection"
         className="w-full h-full object-cover pointer-events-none"
@@ -67,28 +67,30 @@ export function MainCarousel() {
 
   return (
     <div
-      className="relative px-4 sm:px-8 md:px-16 lg:px-[102px] mx-auto overflow-hidden"
+      className="relative px-0 sm:px-8 md:px-16 lg:px-[102px] mx-auto overflow-hidden"
       role="region"
       aria-roledescription="carousel"
       aria-label="Product Highlights Carousel"
     >
-      <div className="w-full h-full bg-white sm:px-8 md:px-16 lg:px-[102px]">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={currentIndex}
-            initial={{ opacity: 0, scale: 0.92 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.95 }}
-            transition={{
-              opacity: { duration: 0.5, ease: "easeInOut" },
-              scale: { duration: 0.5, ease: "easeOut" },
-            }}
-            className="w-full h-full"
-            aria-live="polite"
-          >
-            {cards[currentIndex].content}
-          </motion.div>
-        </AnimatePresence>
+      <div className="w-full bg-white sm:px-8 md:px-6 lg:px-[100px]">
+        <div className="relative w-full aspect-[21/9]">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentIndex}
+              initial={{ opacity: 0, scale: 0.92 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              transition={{
+                opacity: { duration: 0.5, ease: "easeInOut" },
+                scale: { duration: 0.5, ease: "easeOut" },
+              }}
+              className="absolute inset-0"
+              aria-live="polite"
+            >
+              {cards[currentIndex].content}
+            </motion.div>
+          </AnimatePresence>
+        </div>
       </div>
 
       <div className="absolute bottom-2 sm:bottom-3 md:bottom-4 lg:bottom-6 left-1/2 transform -translate-x-1/2">

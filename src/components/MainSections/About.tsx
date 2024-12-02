@@ -17,23 +17,23 @@ export default function About() {
       <div className="relative h-full px-4 md:px-8 lg:px-44">
         <div className="container mx-auto px-4 md:px-8 pt-10 md:pt-20 space-y-8 md:space-y-16">
           {/* Heading */}
-          <h1 className="text-white text-2xl md:text-[40px] font-bold font-['Montserrat'] leading-tight md:leading-[76px] tracking-[3.60px]">
+          <h1 className="text-white text-[22px] md:text-[40px] font-bold font-['Montserrat'] leading-tight md:leading-[76px] tracking-[3.60px]">
             YOUR TRUSTED PARTNER FOR EXPORT SUCCESS
           </h1>
 
           {/* Content section */}
           <div className="space-y-8 md:space-y-14">
             <div className="space-y-4 md:space-y-8">
-              <h2 className="text-white text-3xl md:text-[40px] font-bold font-['Jost'] tracking-[3.60px]">
+              <h2 className="text-white text-[22px] md:text-[40px] font-bold font-['Jost'] tracking-[3.60px]">
                 GLOW WORM
               </h2>
-              <p className="text-white text-lg md:text-xl font-medium font-['Jost'] tracking-wide leading-relaxed">
+              <p className="text-white text-sm md:text-xl font-medium font-['Jost'] tracking-wide leading-relaxed">
                 we're passionate about helping businesses like yours reach international market with ease and efficiency. Specializing in the export of quality products including bakery items, kerala chips, snacks , many more ...
               </p>
             </div>
             
             <div>
-              <p className="text-white text-lg md:text-xl font-medium font-['Jost'] tracking-wide leading-relaxed">
+              <p className="text-white text-sm md:text-xl font-medium font-['Jost'] tracking-wide leading-relaxed">
                 Our experienced team manages the entire export process, from market research and logistics to documentation and compliance.
               </p>
             </div>
@@ -41,7 +41,7 @@ export default function About() {
 
           {/* Bottom text */}
           <div className="pr-4 md:pr-20">
-            <h3 className="text-white text-xl md:text-[26px] font-black font-['Jost'] tracking-widest leading-tight">
+            <h3 className="text-white text-xs md:text-[26px] font-bold font-['Jost'] tracking-widest leading-tight">
               READY TO EXPAND YOUR MARKET REACH LETS TAKE YOUR BUSINESS TO NEW HEIGHTS
             </h3>
           </div>
