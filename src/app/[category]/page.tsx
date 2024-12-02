@@ -18,7 +18,7 @@ export function generateStaticParams() {
 async function getData(category: string) {
   const encodedCategory = encodeURIComponent(category);
   // const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000';
-  const baseUrl = "https://glowwormchips.vercel.app/"
+  const baseUrl = "https://glowwormchips.vercel.app"
   const url = new URL(`/api/${encodedCategory}`, baseUrl);
   
   const res = await fetch(url.toString(), {
