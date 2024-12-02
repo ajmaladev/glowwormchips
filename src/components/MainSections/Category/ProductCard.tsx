@@ -4,7 +4,7 @@ import { Product } from "../../../../type";
 import { BouncyMotion } from "../../Globals/BouncyMotion";
 import { useEffect, useState } from "react";
 
-export default function ProductCard({ product, bgColor="bg-white h-40" }: { product: Product, bgColor?: string }) {
+export default function ProductCard({ product, bgColor="bg-white h-40", className }: { product: Product, bgColor?: string, className?: string }) {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(()=>{
@@ -21,7 +21,10 @@ export default function ProductCard({ product, bgColor="bg-white h-40" }: { prod
         stiffness: 100,
       }}
     >
-      <article className="w-full max-w-sm mx-auto pt-6" aria-label={`Product: ${product.name}`}>
+      <article 
+        className={`pt-6 ${className}`} 
+        aria-label={`Product: ${product.name}`}
+      >
         <div className="flex flex-col relative">
           <figure className="w-full aspect-[4/5] z-20">
             <Image
@@ -42,7 +45,7 @@ export default function ProductCard({ product, bgColor="bg-white h-40" }: { prod
             />
           </figure>
           <div className={`w-full mt-2 absolute -bottom-20 z-10 flex items-center justify-center px-4 py-2 ${bgColor} rounded-tl-3xl rounded-tr-[55px] rounded-b-lg shadow-sm`}>
-            <h2 className="text-[#333333] text-[20.90px] pt-9 leading-tight font-normal font-['Jost'] text-center">
+            <h2 className="text-[#333333] text-lg md:text-[20.90px] pt-9 leading-tight font-normal font-['Jost'] text-center">
               {product.name}
             </h2>
           </div>

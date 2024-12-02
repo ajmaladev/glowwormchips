@@ -18,9 +18,18 @@ export default function BestSellers() {
           backgroundSize: "cover",
         }}
       >
-        <div className="grid grid-cols-2 w-10/12 m-auto pt-12 pb-28 sm:grid-cols-4 md:grid-cols-6 gap-x-12 gap-y-20 p-4">
+        {/* Scrollable Container */}
+        <div 
+          className="flex overflow-x-auto overflow-y-hidden gap-12 px-4 py-12 pb-44 items-center justify-center scrollbar-hide"
+          style={{ scrollBehavior: 'smooth' }}
+        >
           {bestSellers.map((product) => (
-            <ProductCard key={product.id} product={product} bgColor="bg-white h-32" />
+            <ProductCard 
+              key={product.id} 
+              product={product} 
+              bgColor="bg-white h-32"
+              className="flex-shrink-0 w-[185px]"
+            />
           ))}
         </div>
       </div>

@@ -28,25 +28,25 @@ export default function CategoryContainer({ id }: { id?: number }) {
 
   return (
     <section
-      className="w-full mx-auto px-4 py-16 relative"
+      className="w-full mx-auto px-2 sm:px-4 md:px-6 lg:px-[100px] py-5 md:py-16 relative"
       aria-label="Food Categories Section"
       role="region"
     >
-      <h2 className="text-center text-[#0c3614] text-2xl md:text-4xl font-medium font-['Jost'] tracking-widest mb-8">
-        {id ? "Explore More Food Categories" : "Our Food Category Selection"}
+      <h2 className="text-center text-base text-[#0c3614] sm:text-2xl md:text-4xl font-medium font-['Jost'] tracking-widest mb-8">
+        {id ? "Explore More Food Categories" : "WE GOT BEST VARIETY OF DELICIOUS"}
       </h2>
 
       <div
-        className={`grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 ${
+        className={`grid grid-cols-3 sm:grid-cols-2 md:grid-cols-3 ${
           id ? "lg:grid-cols-5" : "lg:grid-cols-6"
-        } gap-8 md:gap-10 lg:gap-12 justify-items-center py-8 px-4`}
+        } gap-3 gap-y-10 md:gap-10 lg:gap-12 justify-items-center py-8 px-4`}
         role="list"
         aria-label="Food category list"
       >
         {categories.map((category: Category) => (
           <BouncyMotion
             key={category.id}
-            className="flex flex-col items-center w-full p-4 hover:transform hover:scale-105 transition-transform duration-300"
+            className="flex flex-col items-center w-full sm:p-4 hover:transform hover:scale-105 transition-transform duration-300"
           >
             <Link
               href={`/${category.id}`}

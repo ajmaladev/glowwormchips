@@ -15,15 +15,19 @@ export default function DiscoverSection() {
           backgroundSize: "cover",
         }}
       >
-        <h2 className="text-center  m-auto pt-16 text-white text-[43.92px] font-black font-['Jost'] tracking-[3.07px]">
+        <h2 className="text-center text-2xl md:text-[43.92px] m-auto pt-16 text-white font-black font-['Jost'] tracking-[3.07px]">
           Discover your favorite in this crispy collection
         </h2>
-        <div className="grid grid-cols-2 w-10/12 m-auto pb-28 sm:grid-cols-4 pt-32 md:grid-cols-6 gap-x-12 gap-y-20 p-4">
+        <div 
+          className="flex overflow-x-auto overflow-y-hidden gap-12 px-4 py-4 md:py-12 pb-28 md:pb-44 items-center justify-center scrollbar-hide"
+          style={{ scrollBehavior: 'smooth' }}
+        >
           {bananaChips.map((product) => (
             <ProductCard
               key={product.id}
               product={product}
               bgColor="bg-neutral-100 h-32"
+              className="flex-shrink-0 w-[185px]"
             />
           ))}
         </div>
