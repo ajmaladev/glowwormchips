@@ -4,7 +4,7 @@ import { Product } from "../../../../type";
 import { BouncyMotion } from "../../Globals/BouncyMotion";
 import { useEffect, useState } from "react";
 
-export default function ProductCard({ product, bgColor="bg-white h-40", className }: { product: Product, bgColor?: string, className?: string }) {
+export default function ProductCard({ product, bgColor, className, textSize }: { product: Product, bgColor?: string, className?: string, textSize?: string }) {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(()=>{
@@ -22,11 +22,11 @@ export default function ProductCard({ product, bgColor="bg-white h-40", classNam
       }}
     >
       <article 
-        className={`pt-6 ${className}`} 
+        className={`pt-6 ${className?className:""}`} 
         aria-label={`Product: ${product.name}`}
       >
         <div className="flex flex-col relative">
-          <figure className="w-full aspect-[4/5] z-20">
+          <figure className="w-[85%] aspect-[4/5] z-20">
             <Image
               src={isLoaded ? product.image : product.image.split(".svg")[0] + "-fallback.png"}
               alt={`${product.name} product image`}
@@ -44,8 +44,8 @@ export default function ProductCard({ product, bgColor="bg-white h-40", classNam
               unoptimized={true}
             />
           </figure>
-          <div className={`w-full mt-2 absolute -bottom-20 z-10 flex items-center justify-center px-4 py-2 ${bgColor} rounded-tl-3xl rounded-tr-[55px] rounded-b-lg shadow-sm`}>
-            <h2 className="text-[#333333] text-lg md:text-[20.90px] pt-9 leading-tight font-normal font-['Jost'] text-center">
+          <div className={`w-full mt-2 absolute -bottom-20 z-10 flex items-end justify-center px-4 py-2  rounded-tl-3xl rounded-tr-[55px] md:rounded-tr-[75px] rounded-b-lg shadow-sm pb-6 md:pb-10 ${bgColor}`}>
+            <h2 className={`text-[#333333] pt-9 z-30 leading-tight font-normal font-['Jost'] text-center ${textSize||"text-lg sm:text-xl md:text-[20.90px] lg:text-3xl"}`}>
               {product.name}
             </h2>
           </div>

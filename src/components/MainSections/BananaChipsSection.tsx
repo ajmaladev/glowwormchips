@@ -20,15 +20,16 @@ export default function BananaChipsSection() {
           OUR KERALA BANANA CHIPS ARE SURE TO DELIGHT
         </h2>
         <div 
-          className="flex overflow-x-auto overflow-y-hidden gap-12 px-4 py-[15px] md:py-12 pb-28 md:pb-44 items-center justify-center scrollbar-hide"
+          className="flex overflow-x-auto overflow-y-hidden pl-4 md:pl-20 gap-4 md:gap-12 px-2 md:px-4 py-4  md:py-12 pb-28 md:pb-32 mb-10 md:mb-3 items-start md:items-center justify-start md:justify-center scrollbar-hide"
           style={{ scrollBehavior: 'smooth' }}
         >
           {bananaChips.map((product) => (
             <ProductCard 
               key={product.id} 
               product={product} 
-              bgColor="bg-white h-32" 
-              className="flex-shrink-0 w-[185px]"
+              bgColor="bg-white h-28 md:h-32 pb-2 md:pb-4 -bottom-14 sm:-bottom-14 md:-bottom-16"
+              className="w-[140.05px] md:w-[185px]"
+              textSize="text-lg sm:text-xl md:text-[20.90px]"
             />
           ))}
         </div>

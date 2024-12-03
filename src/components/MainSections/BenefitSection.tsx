@@ -34,10 +34,10 @@ export const BenefitSection = () => {
   return (
     <section
       aria-label="Product Benefits"
-      className="container mx-auto py-36 px-4 md:px-8 relative"
+      className="container mx-auto py-24 md:py-36 px-4 md:px-8 relative"
     >
       <Button className="absolute left-1/2 -translate-x-1/2 -top-8 pl-[51.25px] pr-[50.33px] py-8 bg-[#43c05b] hover:bg-[#43c05b]/70 rounded-[39.28px] shadow-2xl border-2 border-[#fe5d26]/5 backdrop-blur-[19.64px] justify-center items-center inline-flex">
-        <div className="text-center text-white text-[28.64px] font-black tracking-wide">
+        <div className="text-center text-white text-lg md:text-[28.64px] font-black tracking-wide">
           ORDER NOW
         </div>
       </Button>
@@ -51,11 +51,11 @@ export const BenefitSection = () => {
                 className="rounded-full border-4 border-[#5db046] p-6 flex items-center justify-center"
                 aria-hidden="true"
               >
-                <div className="flex items-center text-4xl" role="presentation">
+                <div className="flex items-center w-[52px] h-[52px] md:w-[72px] md:h-[72px] text-4xl" role="presentation">
                   {benefit.icon}
                 </div>
               </figure>
-              <h3 className="text-center text-[#5db046] text-xl md:text-2xl font-normal font-['Jost'] tracking-widest">
+              <h3 className="text-center text-[#5db046]  text-[13px] md:text-2xl font-normal font-['Jost'] tracking-widest">
                 {Array.isArray(benefit.title)
                   ? benefit.title.map((line, i) => (
                       <span key={i} className="block">
