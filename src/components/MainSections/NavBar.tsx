@@ -114,7 +114,7 @@ export default function NavBar() {
         </div>
 
       {/* Mobile Menu Button - Only visible on mobile */}
-      <div className="md:hidden md:order-3 bg-white/80">
+      <div className="md:hidden md:order-3">
         <Sheet>
           <SheetTrigger
             className="p-2 rounded-lg hover:bg-gray-100 transition-colors"

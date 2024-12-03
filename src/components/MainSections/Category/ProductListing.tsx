@@ -18,9 +18,9 @@ export default function ProductListing({
         backgroundSize: "cover",
       }}
     >
-      <div className="grid grid-cols-2 pt-12 pb-28 sm:grid-cols-2 md:grid-cols-3 gap-x-12 gap-y-20 p-4">
+      <div className="grid grid-cols-2 pt-12 pb-28 sm:grid-cols-2 md:grid-cols-3 gap-x-4 md:gap-x-12 gap-y-20 p-4">
         {products.map((product) => (
-          <ProductCard key={product.id} product={product} />
+          <ProductCard key={product.id} product={product} bgColor="bg-white h-[120px] sm:h-[150px] md:h-[200px] -bottom-14 md:-bottom-20"  />
         ))}
       </div>
     </div>
