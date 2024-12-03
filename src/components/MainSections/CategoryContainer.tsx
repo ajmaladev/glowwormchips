@@ -46,7 +46,7 @@ export default function CategoryContainer({ id }: { id?: number }) {
         {categories.map((category: Category) => (
           <BouncyMotion
             key={category.id}
-            className="flex flex-col items-center w-full sm:p-4 hover:transform hover:scale-105 transition-transform duration-300"
+            className="flex flex-col items-center w-full sm:p-4"
           >
             <Link
               href={`/${category.id}`}
