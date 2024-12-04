@@ -47,11 +47,13 @@ export default function CategoryContainer({ id }: { id?: number }) {
           <BouncyMotion
             key={category.id}
             className="flex flex-col items-center w-full sm:p-4"
+            role="listitem"
           >
             <Link
               href={`/${category.id}`}
               aria-label={`Browse ${category.name} category items`}
               className="w-full text-center"
+              role="link"
             >
               <Image
                 width={155}
