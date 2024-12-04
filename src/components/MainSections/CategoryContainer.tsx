@@ -32,7 +32,7 @@ export default function CategoryContainer({ id }: { id?: number }) {
       aria-label="Food Categories Section"
       role="region"
     >
-      <h2 className="text-center text-base text-[#0c3614] sm:text-2xl md:text-4xl font-medium font-['Jost'] tracking-widest mb-8">
+      <h2 className="text-center text-base text-[#0c3614] sm:text-2xl md:text-4xl font-medium font-['Jost'] tracking-wide md:tracking-widest mb-8">
         {id ? "Explore More Food Categories" : "WE GOT BEST VARIETY OF DELICIOUS"}
       </h2>
 
@@ -47,11 +47,13 @@ export default function CategoryContainer({ id }: { id?: number }) {
           <BouncyMotion
             key={category.id}
             className="flex flex-col items-center w-full sm:p-4"
+            role="listitem"
           >
             <Link
               href={`/${category.id}`}
               aria-label={`Browse ${category.name} category items`}
               className="w-full text-center"
+              role="link"
             >
               <Image
                 width={155}
@@ -61,7 +63,7 @@ export default function CategoryContainer({ id }: { id?: number }) {
                 alt={`${category.name} category illustration`}
                 priority={true}
               />
-              <h3 className="text-center text-[#0c3614] text-xl md:text-[27.36px] font-normal font-['Jost'] mt-2">
+              <h3 className="text-center text-[#0c3614] text-lg md:text-[27.36px] font-normal font-['Jost'] mt-2">
                 {category.name}
               </h3>
             </Link>

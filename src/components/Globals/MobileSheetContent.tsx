@@ -4,6 +4,8 @@ import { SheetContent, SheetHeader, SheetTitle } from "../ui/sheet";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { CategoriesData } from "../../../type";
+import { socialLinks } from "../MainSections/Footer";
+import { BouncyMotion } from "./BouncyMotion";
 
 export default function MobileSheetContent() {
   const [categories, setCategories] = useState<CategoriesData["categories"]>([]);
@@ -28,7 +30,7 @@ export default function MobileSheetContent() {
       <div className="relative" role="navigation">
         <SheetHeader className="flex justify-center items-center h-[150px] relative">
           <SheetTitle>
-            <Link href="/" className="flex items-center absolute top-24 left-0" aria-label="Go to homepage">
+            <Link href="/" className="flex items-center absolute top-10 left-0" aria-label="Go to homepage">
               <Image
                 src="/logo.svg"
                 alt="Glow Worm Logo"
@@ -41,7 +43,7 @@ export default function MobileSheetContent() {
           </SheetTitle>
         </SheetHeader>
 
-        <nav role="navigation" aria-label="Mobile menu links" className="flex flex-col space-y-4 mt-36 ml-8">
+        <nav role="navigation" aria-label="Mobile menu links" className="flex flex-col space-y-4 mt-20 ml-8">
           <div className=" inline-flex">
             <Link
               href="/"
@@ -103,7 +105,7 @@ export default function MobileSheetContent() {
           </div>
         </nav>
 
-        <footer className="h-[65px] left-[11px] top-[546px] absolute flex-col justify-center items-center gap-[7px] inline-flex" role="contentinfo">
+        <footer className="h-[65px] left-[25px] top-[500px] absolute flex-col justify-center items-center gap-[7px] inline-flex" role="contentinfo">
           <address className="text-center text-white text-[11.05px] font-medium font-['Jost'] leading-[14.50px] tracking-wide">
             Mail<br />
             <a 
@@ -132,7 +134,32 @@ export default function MobileSheetContent() {
               +91 9895 193 123
             </a>
           </address>
+          <nav
+          className="relative z-10 flex justify-center items-center gap-[20px]"
+          aria-label="Social media links"
+        >
+          {socialLinks.map((social) => (
+            <BouncyMotion key={social.id} initialY={-20}>
+              <a
+                href={social.href}
+                className="p-2 hover:opacity-80 transition-opacity"
+                aria-label={social.ariaLabel}
+                rel="noopener noreferrer"
+                itemProp="sameAs"
+              >
+                <Image
+                  src={social.icon}
+                  alt={`${social.name} icon`}
+                  width={54}
+                  height={54}
+                  className="object-contain w-[29px] md:w-[50.99px] h-[29px] md:h-[50.99px]"
+                />
+              </a>
+            </BouncyMotion>
+          ))}
+        </nav>
         </footer>
+        
       </div>
     </SheetContent>
   );

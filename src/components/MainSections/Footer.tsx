@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { BouncyMotion } from "@/components/Globals/BouncyMotion";
 
-const socialLinks = [
+export const socialLinks = [
   {
     id: 1,
     name: "Instagram",
@@ -58,7 +58,7 @@ export const Footer = () => {
   return (
     <>
       <footer
-        className="p-4 sm:p-8 bg-[#2d2d2d] min-h-screen flex flex-col items-center justify-between"
+        className="p-4 sm:p-8 bg-[#2d2d2d] flex flex-col items-center "
         role="contentinfo"
         aria-label="Site footer"
         id="footer"
@@ -82,10 +82,10 @@ export const Footer = () => {
         </header>
 
         {/* Updated Main Content */}
-        <article className="relative z-10 flex-1 flex flex-col items-center justify-center max-w-7xl mx-auto sm:py-8 md:py-12 px-4">
+        <article className="relative z-10 flex flex-col items-center justify-center max-w-7xl py-2 mx-auto sm:py-8 md:py-12 px-4">
           <h3 className="sr-only">About GLOW WORM Premium Snacks</h3>
           <p
-            className="mx-auto text-center text-white text-base md:text-[28.13px] font-normal font-['Jost'] leading-relaxed md:leading-[36.92px] tracking-wider mb-8 md:mb-12"
+            className="mx-auto text-center text-white text-base md:text-[28.13px] font-normal font-['Jost'] leading-[21px] md:leading-[36.92px] tracking-wide md:tracking-wider mb-8 md:mb-12"
             aria-label="Company description"
           >
             At GLOW WORM, we specialize in bringing the rich flavors of diverse

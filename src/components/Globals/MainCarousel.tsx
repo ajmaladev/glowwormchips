@@ -8,49 +8,21 @@ import Image from "next/image";
 const cards = [
   {
     id: 1,
-    content: (
-      <Image
-        width={0}
-        height={0}
-        alt="Artisanal Premium Potato Chips - Handcrafted in Small Batches with Natural Ingredients"
-        title="Premium Gourmet Potato Chips"
-        className="w-full h-full object-cover pointer-events-none"
-        src="/carousel/carousel-1.svg"
-        priority
-        unoptimized
-        draggable="false"
-      />
-    ),
+    title: "Premium Gourmet Potato Chips",
+    description: "Artisanal Premium Potato Chips - Handcrafted in Small Batches with Natural Ingredients",
+    image: "/carousel/carousel-1.svg",
   },
   {
     id: 2,
-    content: (
-      <Image
-        width={0}
-        height={0}
-        alt="Organic Premium Ingredients - Sourced from Local Farmers for Superior Quality Snacks"
-        title="Premium Quality Ingredients"
-        className="w-full h-full object-cover pointer-events-none"
-        src="/carousel/carousel-2.svg"
-        unoptimized
-        draggable="false"
-      />
-    ),
+    title: "Premium Quality Ingredients",
+    description: "Organic Premium Ingredients - Sourced from Local Farmers for Superior Quality Snacks",
+    image: "/carousel/carousel-2.svg",
   },
   {
     id: 3,
-    content: (
-      <Image
-        width={0}
-        height={0}
-        alt="Gourmet Artisanal Snacks - Crafted with Love for an Exceptional Snacking Experience"
-        title="Artisanal Snack Collection"
-        className="w-full h-full object-cover pointer-events-none"
-        src="/carousel/carousel-3.svg"
-        unoptimized
-        draggable="false"
-      />
-    ),
+    title: "Artisanal Snack Collection",
+    description: "Gourmet Artisanal Snacks - Crafted with Love for an Exceptional Snacking Experience",
+    image: "/carousel/carousel-3.svg",
   },
 ];
 
@@ -70,7 +42,9 @@ export function MainCarousel() {
       className="relative px-0 sm:px-8 md:px-16 lg:px-[102px] mx-auto overflow-hidden"
       role="region"
       aria-roledescription="carousel"
-      aria-label="Product Highlights Carousel"
+      aria-label="Featured Products Showcase"
+      itemScope
+      itemType="https://schema.org/ItemList"
     >
       <div className="w-full bg-white sm:px-8 md:px-6 lg:px-[100px]">
         <div className="relative w-full aspect-[21/9]">
@@ -86,8 +60,26 @@ export function MainCarousel() {
               }}
               className="absolute inset-0"
               aria-live="polite"
+              id={`slide-${currentIndex + 1}`}
+              role="tabpanel"
+              itemProp="itemListElement"
+              itemScope
+              itemType="https://schema.org/ImageObject"
             >
-              {cards[currentIndex].content}
+              <meta itemProp="position" content={`${currentIndex + 1}`} />
+              <meta itemProp="name" content={cards[currentIndex].title} />
+              <Image
+                width={0}
+                height={0}
+                alt={cards[currentIndex].description}
+                title={cards[currentIndex].title}
+                className="w-full h-full object-cover pointer-events-none"
+                src={cards[currentIndex].image}
+                priority={currentIndex === 0}
+                unoptimized
+                draggable="false"
+                itemProp="contentUrl"
+              />
             </motion.div>
           </AnimatePresence>
         </div>
@@ -112,7 +104,7 @@ export function MainCarousel() {
                 )}
                 role="tab"
                 aria-selected={currentIndex === index}
-                aria-label={`View slide ${index + 1}`}
+                aria-label={`Slide ${index + 1} of ${cards.length}`}
                 aria-controls={`slide-${index + 1}`}
               />
             ))}
