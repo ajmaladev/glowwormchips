@@ -32,7 +32,7 @@ export default function CategoryContainer({ id }: { id?: number }) {
       aria-label="Food Categories Section"
       role="region"
     >
-      <h2 className="text-center text-base text-[#0c3614] sm:text-2xl md:text-4xl font-medium font-['Jost'] tracking-widest mb-8">
+      <h2 className="text-center text-base text-[#0c3614] sm:text-2xl md:text-4xl font-medium font-['Jost'] tracking-wide md:tracking-widest mb-8">
         {id ? "Explore More Food Categories" : "WE GOT BEST VARIETY OF DELICIOUS"}
       </h2>
 
@@ -61,7 +61,7 @@ export default function CategoryContainer({ id }: { id?: number }) {
                 alt={`${category.name} category illustration`}
                 priority={true}
               />
-              <h3 className="text-center text-[#0c3614] text-xl md:text-[27.36px] font-normal font-['Jost'] mt-2">
+              <h3 className="text-center text-[#0c3614] text-lg md:text-[27.36px] font-normal font-['Jost'] mt-2">
                 {category.name}
               </h3>
             </Link>

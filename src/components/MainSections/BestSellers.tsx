@@ -11,7 +11,7 @@ export default function BestSellers() {
 
   return (
     <section className="flex flex-col gap-5">
-      <h2 className="text-center text-[#f5ba45] text-2xl md:text-4xl relative font-extrabold font-['Jost'] tracking-[2.52px]">
+      <h2 className="text-center text-[#f5ba45] text-2xl md:text-4xl relative font-extrabold font-['Jost'] tracking-widest">
         TRY OUR BEST SELLERS 
         {/* <FaPlay className="w-4 h-4 md:hidden md:w-6 md:h-6 text-[#f5ba45] absolute top-1/2 left-[94%] -translate-x-1/2 -translate-y-1/2" /> */}
       </h2>
@@ -33,7 +33,7 @@ export default function BestSellers() {
               product={product} 
               bgColor="bg-white h-28 md:h-32 pb-2 md:pb-4 -bottom-14 sm:-bottom-14 md:-bottom-16"
               className="w-[140.05px] md:w-[185px]"
-              textSize="text-lg sm:text-xl md:text-[20.90px]"
+              textSize="text-lg sm:text-xl md:text-[20.90px] font-['Jost']"
             />
           ))}
         </div>

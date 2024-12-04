@@ -220,9 +220,10 @@ export default function SearchContent() {
                           restDelta: 0.001
                         }
                       }}
+                      className="h-full"
                     >
-                      <div className="relative p-4 bg-white rounded-lg border hover:shadow-lg transition-shadow">
-                        <div className="relative h-32 mb-2">
+                      <div className="relative p-4 bg-white rounded-lg border hover:shadow-lg transition-shadow h-full flex flex-col">
+                        <div className="relative h-32 mb-2 flex-shrink-0">
                           <Image
                             src={product.image}
                             alt={product.alt}
@@ -230,7 +231,7 @@ export default function SearchContent() {
                             className="object-contain"
                           />
                         </div>
-                        <h4 className="font-['Jost'] text-center text-[#0c3614]">
+                        <h4 className="font-['Jost'] text-center text-[#0c3614] flex-grow flex items-center justify-center">
                           {product.name}
                         </h4>
                         {product.tags && product.tags.length > 0 && (

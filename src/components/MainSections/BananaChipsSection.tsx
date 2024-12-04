@@ -29,7 +29,7 @@ export default function BananaChipsSection() {
               product={product} 
               bgColor="bg-white h-28 md:h-32 pb-2 md:pb-4 -bottom-14 sm:-bottom-14 md:-bottom-16"
               className="w-[140.05px] md:w-[185px]"
-              textSize="text-lg sm:text-xl md:text-[20.90px]"
+              textSize="text-lg sm:text-xl md:text-[20.90px] font-['Jost']"
             />
           ))}
         </div>
