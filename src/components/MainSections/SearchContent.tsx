@@ -101,6 +101,7 @@ export default function SearchContent() {
             className="w-full p-3 pl-12 pr-10 text-lg border rounded-lg outline-none focus:ring-2 focus:ring-[#0c3614] focus:border-transparent font-['Jost']"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
+            aria-label="Search products and categories"
           />
           <Search
             className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"

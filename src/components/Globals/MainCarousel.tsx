@@ -35,7 +35,11 @@ export function MainCarousel() {
     }, 4000);
 
     return () => clearInterval(timer);
-  }, []);
+  }, [currentIndex]);
+
+  const handleSlideChange = (index: number) => {
+    setCurrentIndex(index);
+  };
 
   return (
     <div
@@ -95,7 +99,7 @@ export function MainCarousel() {
             {cards.map((_, index) => (
               <button
                 key={index}
-                onClick={() => setCurrentIndex(index)}
+                onClick={() => handleSlideChange(index)}
                 className={cn(
                   "w-2.5 h-2.5 sm:w-3 sm:h-3 md:w-4 md:h-4 lg:w-5 lg:h-5 rounded-full transition-all duration-300",
                   currentIndex === index

@@ -1,36 +1,151 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌟 GLOW WORM CHIPS - Premium Kerala Snacks
 
-## Getting Started
+Welcome to the official repository of GLOW WORM CHIPS, your destination for authentic Kerala snacks and delicacies. Our platform showcases the rich culinary heritage of Kerala through our premium selection of handcrafted snacks.
 
-First, run the development server:
+## 🚀 Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Static Site Generation (SSG)**: Optimized for maximum performance and SEO
+- **Category-based Navigation**: Easy browsing through our diverse product range
+- **Responsive Design**: Perfect viewing experience across all devices
+- **SEO Optimized**: Enhanced metadata and search engine visibility
+- **Rich Product Information**: Detailed descriptions and high-quality images
+- **Performance Focused**: Fast loading times and optimal caching strategies
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Technical Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Framework**: [Next.js 15.0.3](https://nextjs.org)
+- **Styling**: Tailwind CSS with custom configurations
+- **Animations**: Framer Motion for smooth transitions
+- **UI Components**: Custom components with Radix UI
+- **State Management**: React's built-in hooks
+- **Build Tool**: Turbopack for faster development
+- **Type Safety**: TypeScript for robust code
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📦 Product Categories
 
-## Learn More
+1. **Banana Chips** 
+   - Traditional Kerala-style chips
+   - Multiple flavors and cuts
+   - Premium quality nendran bananas
 
-To learn more about Next.js, take a look at the following resources:
+2. **Murukku**
+   - Malabar special varieties
+   - Garlic and tomato flavors
+   - Authentic South Indian recipe
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. **Dry Fruits**
+   - Premium quality selections
+   - Traditional and exotic varieties
+   - Natural preservation methods
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+4. **Biscuits**
+   - Handcrafted specialties
+   - Unique shapes and flavors
+   - Perfect tea-time companions
 
-## Deploy on Vercel
+5. **Tapioca Chips**
+   - Crispy and flavorful
+   - Multiple seasoning options
+   - Traditional Kerala style
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+6. **Special Varieties**
+   - Jackfruit chips
+   - Kerala mixture
+   - Seasonal specialties
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🚀 Getting Started
+
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/ajmaladev/glowwormchips.git
+   cd glowwormchips
+   ```
+
+2. **Install Dependencies**
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+3. **Run Development Server**
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+
+4. **Build for Production**
+   ```bash
+   npm run build
+   # or
+   yarn build
+   ```
+
+## 🌐 SEO & Performance
+
+Our platform is optimized for search engines with:
+- Comprehensive metadata for all pages
+- Static page generation for faster loading
+- Optimized robots.txt configuration
+- Structured data implementation
+- Social media meta tags
+- Image optimization
+- Mobile-first approach
+
+## 📱 Mobile Responsiveness
+
+The website is fully responsive across:
+- Smartphones
+- Tablets
+- Desktop computers
+- Large screens
+
+## 🔒 Quality Assurance
+
+- Static type checking with TypeScript
+- ESLint for code quality
+- Automated build process
+- Performance monitoring
+- SEO best practices
+
+## 🤝 Contributing
+
+We welcome contributions! Please follow these steps:
+1. Fork the repository
+2. Create your feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a Pull Request
+
+## 📞 Contact & Support
+
+For any queries or support:
+- **Email**: glowwormchips@gmail.com
+- **Phone**: +919995700791, +919895193123
+- **Location**: Malappuram, Kerala, India
+
+## 🌟 Social Media
+
+Follow us on:
+- [Instagram](https://www.instagram.com/gwglowworm)
+- [Facebook](https://www.facebook.com/share/18a2TKRW6e)
+- [Google Maps](https://maps.app.goo.gl/Z4GcQEdssMu9E6Ha7)
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+
+## 🙏 Acknowledgments
+
+Special thanks to:
+- Our dedicated team of snack craftsmen
+- Our loyal customers
+- The Kerala culinary tradition
+- The Next.js community
+
+---
+
+Made with ❤️ by GLOW WORM CHIPS | Premium Kerala Snacks & Food Products
+
+[Visit our website](https://glowwormchips.com) | [Contact us](mailto:glowwormchips@gmail.com)

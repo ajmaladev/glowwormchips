@@ -30,6 +30,28 @@ const testimonialData = [
   },
 ];
 
+const testimonialStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "itemListElement": testimonialData.map((testimonial, index) => ({
+    "@type": "Review",
+    "position": index + 1,
+    "author": {
+      "@type": "Person",
+      "name": testimonial.name
+    },
+    "reviewBody": testimonial.message,
+    "itemReviewed": {
+      "@type": "Product",
+      "name": "GLOW WORM CHIPS",
+      "brand": {
+        "@type": "Brand",
+        "name": "GLOW WORM CHIPS"
+      }
+    }
+  }))
+};
+
 const Testimonials = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -124,6 +146,10 @@ const Testimonials = () => {
           </div>
         </div>
       </div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(testimonialStructuredData) }}
+      />
     </section>
   );
 };

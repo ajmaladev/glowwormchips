@@ -32,12 +32,32 @@ import Slogan from "../MainSections/Slogan"
 import { CategorySkeleton } from '../Skeletons'
 import { SectionSkeleton } from '../Skeletons'
 
-// SEO metadata
-export const metadata: Metadata = {
-  title: 'Kerala Snacks & Delicacies | Traditional South Indian Snacks',
-  description: 'Discover authentic Kerala snacks including banana chips, murukku, dry fruits, and traditional biscuits. Fresh, handcrafted delicacies delivered to your doorstep.',
-  keywords: 'Kerala snacks, banana chips, murukku, dry fruits, traditional biscuits, South Indian snacks',
-}
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "GLOW WORM CHIPS Premium Snacks",
+  "alternateName": ["Glow Worm Chips", "GlowWorm Chips"],
+  "url": "https://glowwormchips.com",
+  "logo": "https://glowwormchips.com/logo.svg",
+  "description": "Premium manufacturer of authentic Kerala banana chips and traditional snacks.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Malappuram",
+    "addressRegion": "Kerala",
+    "postalCode": "676505",
+    "addressCountry": "IN"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+919995700791",
+    "contactType": "customer service",
+    "availableLanguage": ["English", "Malayalam"]
+  },
+  "sameAs": [
+    "https://www.instagram.com/gwglowworm",
+    "https://www.facebook.com/share/18a2TKRW6e"
+  ]
+};
 
 export default function HomePage() {
   return (
@@ -46,6 +66,11 @@ export default function HomePage() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="canonical" href="https://yourwebsite.com" />
       </Head>
+      
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       
       <main role="main" aria-label="Home page content">
         {/* Above the fold content loaded immediately */}

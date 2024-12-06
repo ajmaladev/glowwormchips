@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Product } from "../../../../type";
 import ProductCard from "./ProductCard";
 
@@ -17,6 +16,8 @@ export default function ProductListing({
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
       }}
+      role="region"
+      aria-label="Product Listing"
     >
       <div className="grid grid-cols-2 pt-12 pb-28 sm:grid-cols-2 md:grid-cols-3 gap-x-4 md:gap-x-12 gap-y-20 p-4">
         {products.map((product) => (

@@ -8,12 +8,9 @@ export async function GET(
 ) {
   try {
     const { pathname } = new URL(request.url);
-    const category = pathname.split("/").pop();
+    const categorySlug = pathname.split("/").pop();
     
-    // Convert category to number since IDs are numeric
-    const categoryId = parseInt(category || '', 10);
-    
-    if (!category || isNaN(categoryId)) {
+    if (!categorySlug) {
       return Response.json(
         { error: 'Invalid category parameter' },
         { status: 400 }
@@ -32,16 +29,16 @@ export async function GET(
       );
     }
 
-    const categoryData = data.categories.find((c: Category) => c.id === categoryId);
+    const categoryData = data.categories.find((c: Category) => c.slug === categorySlug);
     
     if (!categoryData) {
       return Response.json(
-        { error: `Category '${categoryId}' not found` },
+        { error: `Category '${categorySlug}' not found` },
         { status: 404 }
       );
     }
 
-    const products = data.products.filter((p: Product) => p.categoryId === categoryId);
+    const products = data.products.filter((p: Product) => p.categoryId === categoryData.id);
     
     return Response.json({
       category: categoryData,

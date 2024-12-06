@@ -4,7 +4,6 @@ import Image from "next/image";
 import { Button } from "../ui/button";
 import { Skeleton } from "../ui/skeleton";
 import { Suspense, useState } from "react";
-import { useInView } from "react-intersection-observer";
 import { WHATSAPP_MESSAGE } from "@/lib/constants";
 
 // Loading skeleton component
@@ -24,11 +23,6 @@ const AboutSkeleton = () => (
 
 export default function About() {
   const [imageLoaded, setImageLoaded] = useState(false);
-  const { ref, inView } = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
-
   const handleWhatsAppClick = () => {
     const encodedMessage = encodeURIComponent(WHATSAPP_MESSAGE);
     window.open(`https://wa.me/919995700791?text=${encodedMessage}`, '_blank');
@@ -36,13 +30,12 @@ export default function About() {
 
   return (
     <section 
-      ref={ref}
       className="relative w-full pb-20" 
       id="about"
       itemScope 
       itemType="https://schema.org/Organization"
     >
-      <meta itemProp="name" content="Glow Worm" />
+      <meta itemProp="name" content="Glow Worm Chips" />
       <meta itemProp="description" content="Your trusted partner for export success, specializing in quality bakery items, Kerala chips, and snacks." />
       <meta itemProp="foundingDate" content="2023" />
       
@@ -62,12 +55,12 @@ export default function About() {
       <div className="relative h-full px-4 md:px-8 lg:px-44">
         <Suspense fallback={<AboutSkeleton />}>
           <div className="container mx-auto px-4 md:px-8 pt-10 md:pt-20 space-y-8 md:space-y-16">
-            <h1 
+            <h4 
               className="text-white text-[22px] md:text-[40px] font-bold font-['Montserrat'] leading-tight md:leading-[76px] tracking-[3.60px]"
               itemProp="slogan"
             >
               YOUR TRUSTED PARTNER FOR EXPORT SUCCESS
-            </h1>
+            </h4>
 
             <div className="space-y-8 md:space-y-14">
               <div className="space-y-4 md:space-y-8">
