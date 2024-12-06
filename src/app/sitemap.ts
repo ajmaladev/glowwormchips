@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 import data from '../../public/data.json'
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://glowwormchips.com'
   
   // Get all category IDs

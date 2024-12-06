@@ -1,111 +1,92 @@
-import dynamic from 'next/dynamic'
-import { Suspense } from 'react'
-import { Metadata } from 'next'
-import Head from 'next/head'
-
-// Lazy load components
-const About = dynamic(() => import("../MainSections/About"), {
-  loading: () => <SectionSkeleton />
-})
-const BananaChipsSection = dynamic(() => import("../MainSections/BananaChipsSection"), {
-  loading: () => <SectionSkeleton />
-})
-const BenefitSection = dynamic(() => import("../MainSections/BenefitSection"), {
-  loading: () => <SectionSkeleton />
-})
-const BestSellers = dynamic(() => import("../MainSections/BestSellers"), {
-  loading: () => <SectionSkeleton />
-})
-const CategoryContainer = dynamic(() => import("../MainSections/CategoryContainer"), {
-  loading: () => <CategorySkeleton />
-})
-const DiscoverSection = dynamic(() => import("../MainSections/DiscoverSection"), {
-  loading: () => <SectionSkeleton />
-})
-const Testimonials = dynamic(() => import("../MainSections/Testimonials"), {
-  loading: () => <SectionSkeleton />
-})
 
 // Keep HeroSection and Slogan with regular imports as they're above the fold
-import HeroSection from "../MainSections/HeroSections"
-import Slogan from "../MainSections/Slogan"
-import { CategorySkeleton } from '../Skeletons'
-import { SectionSkeleton } from '../Skeletons'
+import HeroSection from "../MainSections/HeroSections";
+import Slogan from "../MainSections/Slogan";
+import { Category, Product } from "../../../type";
+import CategoryContainer from "../MainSections/CategoryContainer";
+import BestSellers from "../MainSections/BestSellers";
+import About from "../MainSections/About";
+import BananaChipsSection from "../MainSections/BananaChipsSection";
+import DiscoverSection from "../MainSections/DiscoverSection";
+import Testimonials from "../MainSections/Testimonials";
+import BenefitSection from "../MainSections/BenefitSection";
 
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "GLOW WORM CHIPS Premium Snacks",
-  "alternateName": ["Glow Worm Chips", "GlowWorm Chips"],
-  "url": "https://glowwormchips.com",
-  "logo": "https://glowwormchips.com/logo.svg",
-  "description": "Premium manufacturer of authentic Kerala banana chips and traditional snacks.",
-  "address": {
+  name: "GLOW WORM CHIPS Premium Snacks",
+  alternateName: ["Glow Worm Chips", "GlowWorm Chips"],
+  url: "https://glowwormchips.com",
+  logo: "https://glowwormchips.com/logo.svg",
+  description:
+    "Premium manufacturer of authentic Kerala banana chips and traditional snacks.",
+  address: {
     "@type": "PostalAddress",
-    "addressLocality": "Malappuram",
-    "addressRegion": "Kerala",
-    "postalCode": "676505",
-    "addressCountry": "IN"
+    addressLocality: "Malappuram",
+    addressRegion: "Kerala",
+    postalCode: "676505",
+    addressCountry: "IN",
   },
-  "contactPoint": {
+  contactPoint: {
     "@type": "ContactPoint",
-    "telephone": "+919995700791",
-    "contactType": "customer service",
-    "availableLanguage": ["English", "Malayalam"]
+    telephone: "+919995700791",
+    contactType: "customer service",
+    availableLanguage: ["English", "Malayalam"],
   },
-  "sameAs": [
+  sameAs: [
     "https://www.instagram.com/gwglowworm",
-    "https://www.facebook.com/share/18a2TKRW6e"
-  ]
+    "https://www.facebook.com/share/18a2TKRW6e",
+  ],
 };
 
-export default function HomePage() {
+export default function HomePage({
+  products,
+  categories,
+}: {
+  products: Product[];
+  categories: Category[];
+}) {
+  const bestSellers = products.filter((product: Product) =>
+    product.tags?.includes("Best Seller")
+  );
+  const bananaChips = products.filter(
+    (product: Product) => product.categoryId === 23456
+  );
+  const categoryIds = [10234, 15789, 23456, 34567, 45678, 56789];
+  
+  const discoverProducts = categoryIds.map(categoryId => {
+    const categoryProducts = products.filter(
+      (product: Product) => product.categoryId === categoryId
+    );
+    // Get first product from each category, or random product if you prefer
+    return categoryProducts[0];
+  });
   return (
     <>
-      <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="canonical" href="https://yourwebsite.com" />
-      </Head>
-      
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
-      
+
       <main role="main" aria-label="Home page content">
-        {/* Above the fold content loaded immediately */}
         <HeroSection />
+        
         <Slogan />
-        
-        {/* Lazy loaded content */}
-        <Suspense fallback={<CategorySkeleton />}>
-          <CategoryContainer />
-        </Suspense>
-        
-        <Suspense fallback={<SectionSkeleton />}>
-          <BestSellers />
-        </Suspense>
-        
-        <Suspense fallback={<SectionSkeleton />}>
-          <About />
-        </Suspense>
-        
-        <Suspense fallback={<SectionSkeleton />}>
-          <BananaChipsSection />
-        </Suspense>
-        
-        <Suspense fallback={<SectionSkeleton />}>
-          <DiscoverSection />
-        </Suspense>
-        
-        <Suspense fallback={<SectionSkeleton />}>
-          <Testimonials />
-        </Suspense>
-        
-        <Suspense fallback={<SectionSkeleton />}>
-          <BenefitSection />
-        </Suspense>
+
+        <CategoryContainer categories={categories} />
+
+        <BestSellers products={bestSellers} />
+
+        <About />
+
+        <BananaChipsSection products={bananaChips} />
+
+        <DiscoverSection products={discoverProducts} />
+
+        <Testimonials />
+
+        <BenefitSection />
       </main>
     </>
-  )
+  );
 }

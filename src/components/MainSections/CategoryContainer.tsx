@@ -1,36 +1,14 @@
-"use client";
 import Image from "next/image";
-import { Category, CategoriesData } from "../../../type";
-import { useEffect, useState } from "react";
+import { Category } from "../../../type";
 import Link from "next/link";
 import { BouncyMotion } from "../Globals/BouncyMotion";
 
-export default function CategoryContainer({ id }: { id?: number }) {
-  const [categories, setCategories] = useState<Category[]>([]);
-
-  useEffect(() => {
-    // Fetch categories data
-    const fetchCategories = async () => {
-      try {
-        const response = await fetch("/data.json");
-        const data: CategoriesData = await response.json();
-        const filteredCategories = id
-          ? data.categories.filter((category) => category.id !== id)
-          : data.categories;
-        setCategories(filteredCategories);
-      } catch (error) {
-        console.error("Error loading categories:", error);
-      }
-    };
-
-    fetchCategories();
-  }, []);
-
+export default function CategoryContainer({ id, categories }: { id?: number, categories: Category[] }) {
   const categoryStructuredData = {
     "@context": "https://schema.org",
     "@type": "ItemList",
     "name": id ? "More Food Categories" : "Food Categories",
-    "itemListElement": categories.map((category, index) => ({
+    "itemListElement": categories?.map((category, index) => ({
       "@type": "ListItem",
       "position": index + 1,
       "item": {
@@ -63,7 +41,7 @@ export default function CategoryContainer({ id }: { id?: number }) {
         role="list"
         aria-label="Food category list"
       >
-        {categories.map((category: Category) => (
+        {categories?.map((category: Category) => (
           <BouncyMotion
             key={category.id}
             className="flex flex-col items-center w-full sm:p-4"

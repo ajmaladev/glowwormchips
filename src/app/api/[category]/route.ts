@@ -1,48 +1,30 @@
-// Add interfaces based on the actual data structure
-
 import { Category, Product } from "../../../../type";
-
+import data from '../../../../public/data.json';
 
 export async function GET(
   request: Request,
+  { params }: { params: { category: string } }
 ) {
   try {
-    const { pathname } = new URL(request.url);
-    const categorySlug = pathname.split("/").pop();
+    const categorySlug = params.category;
+    const category = data.categories.find((c: Category) => c.slug === categorySlug);
     
-    if (!categorySlug) {
-      return Response.json(
-        { error: 'Invalid category parameter' },
-        { status: 400 }
-      );
-    }
-
-    let data;
-    try {
-      const jsonData = await import(`../../../../public/data.json`);
-      data = jsonData.default;
-    } catch (error) {
-      console.error('Data loading error:', error);
-      return Response.json(
-        { error: 'Failed to load product data' },
-        { status: 500 }
-      );
-    }
-
-    const categoryData = data.categories.find((c: Category) => c.slug === categorySlug);
-    
-    if (!categoryData) {
+    if (!category) {
       return Response.json(
         { error: `Category '${categorySlug}' not found` },
         { status: 404 }
       );
     }
 
-    const products = data.products.filter((p: Product) => p.categoryId === categoryData.id);
+    const categoryProducts = data.products.filter(product => product.categoryId === category.id);
+    const otherCategories = data.categories.filter((c: Category) => c.id !== category.id);
+    const bestSellers = data.products.filter((product: Product) => product.tags?.includes("Best Seller"));
     
     return Response.json({
-      category: categoryData,
-      products: products
+      category,
+      products: categoryProducts,
+      otherCategories,
+      bestSellers
     });
     
   } catch (error) {
