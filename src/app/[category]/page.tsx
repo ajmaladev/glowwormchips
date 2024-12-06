@@ -16,7 +16,7 @@ export const fetchCache = 'force-cache'
 const getData = async(category:string) =>{
   const apiUrl = "http://localhost:3000/api"
   const hostedUrl = "https://glowwormchips.com/api"
-  const response = await fetch(`${apiUrl}/${category}`,{
+  const response = await fetch(`${hostedUrl}/${category}`,{
     cache: 'force-cache'
   });
   return response.json();

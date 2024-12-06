@@ -1,12 +1,19 @@
 import { Category, Product } from "../../../../type";
 import data from '../../../../public/data.json';
 
+type RouteParams = {
+  params: Promise<{
+    category: string
+  }>
+}
+
 export async function GET(
   request: Request,
-  { params }: { params: { category: string } }
+  { params }: RouteParams
 ) {
   try {
-    const categorySlug = params.category;
+    const param = await params;
+    const categorySlug = param.category;
     const category = data.categories.find((c: Category) => c.slug === categorySlug);
     
     if (!category) {

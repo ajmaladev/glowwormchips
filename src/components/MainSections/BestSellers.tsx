@@ -33,7 +33,6 @@ const bestSellersStructuredData = {
 };
 
 export default function BestSellers({ products }: { products: Product[] }) {
-  console.log(products)
   return (
     <section 
       className="flex flex-col gap-5"
@@ -65,7 +64,7 @@ export default function BestSellers({ products }: { products: Product[] }) {
           role="list"
           aria-label="Best selling products carousel"
         >
-          {products.map((product, index) => (
+          {products?.map((product, index) => (
             <div 
               key={product.id}
               itemScope

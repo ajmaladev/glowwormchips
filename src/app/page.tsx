@@ -69,7 +69,7 @@ export const metadata: Metadata = {
 const getData = async() =>{
   const apiUrl = "http://localhost:3000/api"
   const hostedUrl = "https://glowwormchips.com/api"
-  const response = await fetch(`${apiUrl}`,{
+  const response = await fetch(`${hostedUrl}`,{
     cache: 'force-cache'
   });
   return response.json();
