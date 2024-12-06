@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
 import data from "../../../public/data.json";
+import { Product } from "../../../type";
 import ProductCard from "./Category/ProductCard";
 
 
@@ -32,12 +32,7 @@ const bestSellersStructuredData = {
     }))
 };
 
-export default function BestSellers() {
-
-  const bestSellers = data.products.filter((product) =>
-    product.tags?.includes("Best Seller")
-  );
-
+export default function BestSellers({ products }: { products: Product[] }) {
   return (
     <section 
       className="flex flex-col gap-5"
@@ -47,7 +42,7 @@ export default function BestSellers() {
     >
       <meta itemProp="name" content={SECTION_TITLE} />
       <meta itemProp="description" content={SECTION_DESCRIPTION} />
-      <meta itemProp="numberOfItems" content={bestSellers.length.toString()} />
+      <meta itemProp="numberOfItems" content={products.length.toString()} />
 
       <h2 
         className="text-center text-[#f5ba45] text-2xl md:text-4xl relative font-extrabold font-['Jost'] tracking-widest"
@@ -69,7 +64,7 @@ export default function BestSellers() {
           role="list"
           aria-label="Best selling products carousel"
         >
-          {bestSellers.map((product, index) => (
+          {products?.map((product, index) => (
             <div 
               key={product.id}
               itemScope
@@ -94,15 +89,5 @@ export default function BestSellers() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(bestSellersStructuredData) }}
       />
     </section>
-  );
-}
-
-function ProductCardSkeleton() {
-  return (
-    <div 
-      className="animate-pulse w-[140.05px] md:w-[185px] h-[250px] bg-gray-200 rounded-lg"
-      role="presentation"
-      aria-label="Loading product card"
-    />
   );
 }

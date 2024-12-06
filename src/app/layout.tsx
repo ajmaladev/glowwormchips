@@ -69,46 +69,34 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://glowwormchips.com'),
   title: {
     default: "GLOW WORM CHIPS | Premium Kerala Banana Chips & Traditional Snacks",
-    template: "%s | GLOW WORM Chips - Kerala's Finest"
+    template: "%s | GLOW WORM CHIPS - Kerala's Finest"
   },
-  description: "Premium manufacturer of authentic Kerala banana chips, traditional snacks, and food products. Experience the finest quality chips made from fresh Kerala bananas. Buy online or visit our store in Malappuram.",
+  description: "Buy premium Kerala banana chips and traditional snacks online from GLOW WORM CHIPS. Fresh, handmade snacks made from finest ingredients. Free shipping across Kerala. Order now!",
   applicationName: "GLOW WORM CHIPS",
   keywords: [
-    // Brand keywords
+    // Commercial intent keywords
+    "buy banana chips online",
+    "order Kerala snacks online",
+    "Kerala banana chips price",
+    "traditional snacks delivery",
+    // Location-based keywords
+    "Kerala banana chips",
+    "Malappuram snacks delivery",
+    "Kerala traditional snacks",
+    // Product categories
+    ...allCategories.map(cat => `buy ${cat.toLowerCase()} online`),
+    ...allProducts.map(prod => `buy ${prod.toLowerCase()}`),
+    // Best sellers with commercial intent
+    ...bestSellers.map(seller => `buy ${seller.toLowerCase()} online`),
+    // Long-tail keywords
+    "best banana chips in Kerala",
+    "traditional Kerala snacks online",
+    "authentic Malabar snacks delivery",
+    "premium Kerala food products",
+    // Brand keywords (reduced quantity, kept most important)
     "GLOW WORM chips",
-    "Glowworm chips",
-    "Glow worm banana chips",
-    "Glowworm chips Palakkad",
     "Glowworm chips Kerala",
     "Glowworm chips Malappuram",
-    "Glowworm biscuits",
-    "Glowworm snacks",
-    "Glowworm murukku",
-    "Glowworm dry fruits",
-    "Glowworm banana chips",
-    "Glowworm chips manufacturer",
-    "Glowworm chips online",
-    "Glowworm chips store",
-    "Glowworm chips Palakkad",
-    // Location keywords
-    "Kerala banana chips",
-    "Malappuram chips manufacturer",
-    "Kerala snacks online",
-    // Product keywords
-    ...allCategories,
-    ...allProducts,
-    // Specific product keywords
-    "premium banana chips",
-    "Kerala style chips",
-    "traditional Kerala snacks",
-    "authentic Kerala taste",
-    // Best sellers with brand name
-    ...bestSellers.map(seller => `GLOW WORM ${seller}`),
-    // Long-tail keywords
-    "buy Kerala banana chips online",
-    "premium snacks from Kerala",
-    "traditional Kerala food products",
-    "authentic Malabar snacks",
   ],
   authors: [{ name: "GLOW WORM", url: "https://glowwormchips.com" }],
   creator: "GLOW WORM Premium Snacks",
@@ -122,8 +110,8 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: "GLOW WORM Premium Snacks & Food Products",
-    description: "Premium manufacturer of authentic Kerala snacks including banana chips, murukku, tapioca chips, dry fruits, and traditional biscuits.",
+    title: "GLOW WORM CHIPS | Premium Kerala Snacks Delivered to Your Door",
+    description: "Order authentic Kerala banana chips and traditional snacks online. Fresh, handmade products with free shipping across Kerala. Premium quality guaranteed.",
     url: 'https://glowwormchips.com',
     siteName: 'GLOW WORM Premium Snacks',
     images: [
@@ -139,8 +127,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "GLOW WORM Premium Snacks & Food Products",
-    description: "Premium manufacturer of authentic Kerala snacks and food products",
+    title: "GLOW WORM CHIPS | Premium Kerala Snacks Delivery",
+    description: "Order authentic Kerala banana chips and traditional snacks online. Fresh, handmade products with free shipping across Kerala.",
     images: ['/twitter-image.jpg'],
     creator: '@glowwormchips',
     site: '@glowwormchips',

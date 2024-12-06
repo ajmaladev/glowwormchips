@@ -1,6 +1,7 @@
 import CategoryPage from "@/components/Pages/CategoryPage";
 import data from '../../../public/data.json';
 import { Category, Product } from "../../../type";
+import { organizationInfo } from '@/lib/constants';
 
 type PageProps = {
   params: Promise<{
@@ -11,6 +12,15 @@ type PageProps = {
 export const dynamic = 'force-static'
 export const revalidate = false
 export const fetchCache = 'force-cache'
+
+const getData = async(category:string) =>{
+  const apiUrl = "http://localhost:3000/api"
+  const hostedUrl = "https://glowwormchips.com/api"
+  const response = await fetch(`${hostedUrl}/${category}`,{
+    cache: 'force-cache'
+  });
+  return response.json();
+}
 
 export function generateStaticParams() {
   return data.categories.map((category) => ({
@@ -23,55 +33,37 @@ export async function generateMetadata({ params }: PageProps) {
   const category = data.categories.find((c: Category) => c.slug === param.category);
   const categoryProducts = data.products.filter(product => product.categoryId === category?.id);
   
-  // Generate optimized product names list (limited to top 3-4 products)
   const topProducts = categoryProducts.slice(0, 4).map(p => p.name).join(', ');
-  
-  // Get best sellers if any
   const bestSellers = categoryProducts
     .filter(p => p.tags?.includes('Best Seller'))
     .map(p => p.name)
     .slice(0, 2)
     .join(' and ');
 
-  // Create an optimized description
-  const description = `Explore GLOW WORM's premium ${category?.name}: ${topProducts}. ${
-    bestSellers ? `Featured bestsellers: ${bestSellers}.` : ''
-  } ${category?.short_description}. Shop Kerala's finest snacks in Malappuram.`.slice(0, 160);
-
-  // Organization details from Footer
-  const organizationInfo = {
-    name: "GLOW WORM Premium Snacks & Food Products",
-    description: "At GLOW WORM, we specialize in bringing the rich flavors of diverse snacks and premium products to markets worldwide. our selection promises exceptional taste and quality in every bite.",
-    email: "glowwormchips@gmail.com",
-    phone: ["+919995700791", "+919895193123"],
-    socialLinks: [
-      "https://www.instagram.com/gwglowworm?igsh=ZnA2ZTQ5dDNqdWow",
-      "https://www.facebook.com/share/18a2TKRW6e/?mibextid=LQQJ4d",
-      "https://maps.app.goo.gl/Z4GcQEdssMu9E6Ha7?g_st=iw"
-    ]
-  };
+  const description = `Buy premium ${category?.name} online from GLOW WORM CHIPS Kerala. ${
+    bestSellers ? `Popular choices include ${bestSellers}.` : ''
+  } Fresh, handmade ${category?.short_description}. Free shipping across Kerala. Order now!`.slice(0, 160);
 
   return {
-    title: `GLOW WORM ${category?.title || ''}`,
+    title: `Buy ${category?.title || ''} Online | GLOW WORM CHIPS Kerala`,
     description,
     keywords: [
-      'Kerala snacks',
-      'banana chips',
-      category?.title?.toLowerCase() || '',
-      'traditional snacks',
-      'Malappuram snacks',
-      'premium chips',
+      `buy ${category?.name?.toLowerCase()} online`,
+      `${category?.name?.toLowerCase()} Kerala`,
+      `${category?.name?.toLowerCase()} Malappuram`,
+      'Kerala snacks online',
+      'traditional Kerala snacks',
+      'premium Kerala chips',
       'authentic Kerala food',
-      'Indian snacks',
-      'glow worm chips',
-      'online snacks store',
-      ...categoryProducts.map(p => p.name.toLowerCase()),
-      ...categoryProducts.map(p => p.alt.toLowerCase()),
-      bestSellers ? `best selling ${category?.name}` : '',
-    ].filter(Boolean).join(', '),
+      'buy Indian snacks online',
+      'GLOW WORM snacks',
+      'online snacks delivery',
+      ...categoryProducts.map(p => `buy ${p.name.toLowerCase()} online`),
+      bestSellers ? `best selling ${category?.name?.toLowerCase()}` : '',
+    ].filter(Boolean),
     openGraph: {
-      title: `GLOW WORM ${category?.title || ''} | Premium Kerala Snacks`,
-      description: category?.description,
+      title: `Buy ${category?.title || ''} Online | GLOW WORM CHIPS Kerala`,
+      description,
       url: `https://glowwormchips.com/${category?.slug}`,
       siteName: organizationInfo.name,
       images: [
@@ -93,12 +85,12 @@ export async function generateMetadata({ params }: PageProps) {
     },
     twitter: {
       card: 'summary_large_image',
-      title: `GLOW WORM ${category?.title || ''} | Premium Kerala Snacks`,
-      description: `${category?.description} Featured products: ${bestSellers || topProducts}`,
+      title: `Buy ${category?.title || ''} Online | GLOW WORM CHIPS Kerala`,
+      description,
       images: [category?.image || '', ...categoryProducts.filter(p => p.tags?.includes('Best Seller')).map(p => p.image)],
     },
     alternates: {
-      canonical: `http://localhost:3000/${category?.slug}`,
+      canonical: `https://glowwormchips.com/${category?.slug}`,
     },
     robots: {
       index: true,
@@ -147,9 +139,11 @@ export async function generateMetadata({ params }: PageProps) {
 
 export default async function Page({ params }: PageProps) {
   const param = await params;
-  const categorySlug = param.category;
-  const category: any = data.categories.find((c: Category) => c.slug === categorySlug) || {};
-  const products = data.products.filter((product: Product) => product.categoryId === category.id);
-  
-  return <CategoryPage category={category} products={products} />;
+  const { category, products, otherCategories, bestSellers } = await getData(param.category)
+  return <CategoryPage 
+    category={category} 
+    products={products} 
+    categories={otherCategories} 
+    bestSellers={bestSellers}
+  />;
 }

@@ -1,11 +1,7 @@
-import data from "../../../public/data.json";
+import { Product } from "../../../type";
 import ProductCard from "./Category/ProductCard";
 
-export default function BananaChipsSection() {
-  const bananaChips = data.products.filter(
-    (product) => product.categoryId === 23456
-  );
-
+export default function BananaChipsSection({ products }: { products: Product[] }) {
   return (
     <section className="flex flex-col gap-5" role="region" aria-label="Banana Chips Section">
       <div
@@ -23,7 +19,7 @@ export default function BananaChipsSection() {
           className="flex overflow-x-auto overflow-y-hidden pl-4 md:pl-20 gap-4 md:gap-12 px-2 md:px-4 py-4  md:py-12 pb-28 md:pb-32 mb-10 md:mb-3 items-start md:items-center justify-start md:justify-center scrollbar-hide"
           style={{ scrollBehavior: 'smooth' }}
         >
-          {bananaChips.map((product) => (
+          {products.map((product) => (
             <ProductCard 
               key={product.id} 
               product={product} 

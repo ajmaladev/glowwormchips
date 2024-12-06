@@ -1,22 +1,12 @@
 "use client";
 
-import data from "../../../public/data.json";
+import { Product } from "../../../type";
 import ProductCard from "./Category/ProductCard";
 
 // SEO constants
 const SECTION_TITLE = "Discover your favorite in this crispy collection";
 
-export default function DiscoverSection() {
-  const categoryIds = [10234, 15789, 23456, 34567, 45678, 56789];
-  
-  const mixedProducts = categoryIds.map(categoryId => {
-    const categoryProducts = data.products.filter(
-      product => product.categoryId === categoryId
-    );
-    // Get first product from each category, or random product if you prefer
-    return categoryProducts[0];
-  });
-
+export default function DiscoverSection({ products }: { products: Product[] }) {
   return (
     <section 
       className="flex flex-col gap-5 md:mb-16"
@@ -41,7 +31,7 @@ export default function DiscoverSection() {
           role="list"
           aria-label="Discover our products"
         >
-          {mixedProducts.map((product) => (
+          {products.map((product) => (
             <ProductCard 
               key={product.id} 
               product={product} 
@@ -53,11 +43,5 @@ export default function DiscoverSection() {
         </div>
       </div>
     </section>
-  );
-}
-
-function ProductCardSkeleton() {
-  return (
-    <div className="animate-pulse w-[140.05px] md:w-[185px] h-[250px] bg-gray-200 rounded-lg" />
   );
 }
