@@ -7,7 +7,7 @@ export default function BananaChipsSection() {
   );
 
   return (
-    <section className="flex flex-col gap-5">
+    <section className="flex flex-col gap-5" role="region" aria-label="Banana Chips Section">
       <div
         style={{
             backgroundImage: `url(/delight-bg.png)`,

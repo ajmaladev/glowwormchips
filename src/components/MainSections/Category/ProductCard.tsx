@@ -4,12 +4,29 @@ import { Product } from "../../../../type";
 import { BouncyMotion } from "../../Globals/BouncyMotion";
 import { useEffect, useState } from "react";
 
+const generateProductStructuredData = (product: Product) => ({
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": product.name,
+  "image": product.image,
+  "brand": {
+    "@type": "Brand",
+    "name": "GLOW WORM CHIPS"
+  },
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "priceCurrency": "INR"
+  }
+});
+
 export default function ProductCard({ product, bgColor, className, textSize }: { product: Product, bgColor?: string, className?: string, textSize?: string }) {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(()=>{
     setIsLoaded(true);
   },[])
+
   return (
     <BouncyMotion 
       initialY={10}
@@ -24,7 +41,14 @@ export default function ProductCard({ product, bgColor, className, textSize }: {
       <article 
         className={`pt-6 ${className?className:""}`} 
         aria-label={`Product: ${product.name}`}
+        itemScope
+        itemType="https://schema.org/Product"
+        itemProp="itemListElement"
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(generateProductStructuredData(product)) }}
+        />
         <div className="flex flex-col relative">
           <figure className="w-[85%] aspect-[4/5] z-20">
             <Image
@@ -42,10 +66,12 @@ export default function ProductCard({ product, bgColor, className, textSize }: {
               quality={100}
               priority={true}
               unoptimized={true}
+              itemProp="image"
+              aria-label={`${product.name} - GLOW WORM CHIPS Premium Snacks`}
             />
           </figure>
           <div className={`w-full mt-2 absolute -bottom-20 z-10 flex items-end justify-center px-4 py-2  rounded-tl-3xl rounded-tr-[55px] md:rounded-tr-[75px] rounded-b-lg shadow-sm pb-6 md:pb-10 ${bgColor}`}>
-            <h2 className={`text-[#333333] pt-9 z-30 leading-tight font-normal font-['Jost'] text-center ${textSize||"text-lg sm:text-xl md:text-[20.90px] lg:text-3xl"}`}>
+            <h2 className={`text-[#333333] pt-9 z-30 leading-tight font-normal font-['Jost'] text-center ${textSize||"text-lg sm:text-xl md:text-[20.90px] lg:text-3xl"}`} itemProp="name">
               {product.name}
             </h2>
           </div>

@@ -1,39 +1,38 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import dynamic from 'next/dynamic';
 import data from "../../../public/data.json";
+import ProductCard from "./Category/ProductCard";
 
-// Lazy load ProductCard
-const ProductCard = dynamic(() => import("./Category/ProductCard"), {
-  loading: () => <ProductCardSkeleton />,
-});
 
 // SEO constants
 const SECTION_TITLE = "TRY OUR BEST SELLERS";
 const SECTION_DESCRIPTION = "Discover our most popular premium snacks and food products";
 
-export default function BestSellers() {
-  const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.disconnect();
+// Add after SEO constants
+const bestSellersStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": SECTION_TITLE,
+  "description": SECTION_DESCRIPTION,
+  "itemListElement": data.products
+    .filter(product => product.tags?.includes("Best Seller"))
+    .map((product, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "item": {
+        "@type": "Product",
+        "name": product.name,
+        "image": product.image,
+        "brand": {
+          "@type": "Brand",
+          "name": "GLOW WORM CHIPS"
         }
-      },
-      { threshold: 0.1 }
-    );
+      }
+    }))
+};
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
+export default function BestSellers() {
 
   const bestSellers = data.products.filter((product) =>
     product.tags?.includes("Best Seller")
@@ -41,7 +40,6 @@ export default function BestSellers() {
 
   return (
     <section 
-      ref={sectionRef}
       className="flex flex-col gap-5"
       aria-label="Best Selling Products"
       itemScope
@@ -71,7 +69,7 @@ export default function BestSellers() {
           role="list"
           aria-label="Best selling products carousel"
         >
-          {isVisible && bestSellers.map((product, index) => (
+          {bestSellers.map((product, index) => (
             <div 
               key={product.id}
               itemScope
@@ -90,6 +88,11 @@ export default function BestSellers() {
           ))}
         </div>
       </div>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(bestSellersStructuredData) }}
+      />
     </section>
   );
 }

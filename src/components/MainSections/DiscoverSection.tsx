@@ -1,46 +1,24 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import dynamic from 'next/dynamic';
 import data from "../../../public/data.json";
-
-// Lazy load ProductCard
-const ProductCard = dynamic(() => import("./Category/ProductCard"), {
-  loading: () => <ProductCardSkeleton />,
-});
+import ProductCard from "./Category/ProductCard";
 
 // SEO constants
 const SECTION_TITLE = "Discover your favorite in this crispy collection";
 
 export default function DiscoverSection() {
-  const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.1 }
+  const categoryIds = [10234, 15789, 23456, 34567, 45678, 56789];
+  
+  const mixedProducts = categoryIds.map(categoryId => {
+    const categoryProducts = data.products.filter(
+      product => product.categoryId === categoryId
     );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
-
-  const bananaChips = data.products.filter(
-    (product) => product.categoryId === 23456
-  );
+    // Get first product from each category, or random product if you prefer
+    return categoryProducts[0];
+  });
 
   return (
     <section 
-      ref={sectionRef}
       className="flex flex-col gap-5 md:mb-16"
       aria-labelledby="discover-title"
     >
@@ -63,7 +41,7 @@ export default function DiscoverSection() {
           role="list"
           aria-label="Discover our products"
         >
-          {isVisible && bananaChips.map((product) => (
+          {mixedProducts.map((product) => (
             <ProductCard 
               key={product.id} 
               product={product} 

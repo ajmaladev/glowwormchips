@@ -3,6 +3,7 @@
       {
         "id": 10234,
         "name": "Biscuits",
+        "slug": "biscuits",
         "title": "BISCUIT",
         "image": "/category/biscuits.svg",
         "alt": "Authentic homemade Kerala biscuits assortment",
@@ -15,6 +16,7 @@
       {
         "id": 15789,
         "name": "Dry Fruits",
+        "slug": "dry-fruits",
         "title": "DRY FRUITS",
         "image": "/category/dry-fruits.svg",
         "alt": "Premium South Indian dried fruits and nuts selection",
@@ -27,6 +29,7 @@
       {
         "id": 23456,
         "name": "Banana Chips",
+        "slug": "banana-chips",
         "title": "Banana Chips",
         "image": "/category/banana-chips.svg",
         "alt": "Crispy golden Malabar banana chips",
@@ -39,6 +42,7 @@
       {
         "id": 34567,
         "name": "Murukku",
+        "slug": "murukku",
         "title": "MURUKKU",
         "image": "/category/murukku.svg",
         "alt": "Handcrafted South Indian spiral crunchy snacks",
@@ -51,6 +55,7 @@
       {
         "id": 45678,
         "name": "Tapioca chips",
+        "slug": "tapioca-chips",
         "title": "TAPIOCA",
         "image": "/category/tapioca-chips.svg",
         "alt": "Fresh Kerala cassava crisps collection",
@@ -63,6 +68,7 @@
       {
         "id": 56789,
         "name": "More",
+        "slug": "many-others",
         "title": "MANY OTHERS",
         "image": "/category/more-categories.svg",
         "alt": "Diverse artisanal Kerala snack varieties",

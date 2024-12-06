@@ -26,12 +26,32 @@ export default function CategoryContainer({ id }: { id?: number }) {
     fetchCategories();
   }, []);
 
+  const categoryStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": id ? "More Food Categories" : "Food Categories",
+    "itemListElement": categories.map((category, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "item": {
+        "@type": "Product",
+        "name": category.name,
+        "image": category.image,
+        "url": `https://glowwormchips.com/${category.slug}`
+      }
+    }))
+  };
+
   return (
     <section
       className="w-full mx-auto px-2 sm:px-4 md:px-6 lg:px-[100px] py-5 md:py-16 relative"
       aria-label="Food Categories Section"
       role="region"
     >
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(categoryStructuredData) }}
+      />
       <h2 className="text-center text-base text-[#0c3614] sm:text-2xl md:text-4xl font-medium font-['Jost'] tracking-wide md:tracking-widest mb-8">
         {id ? "Explore More Food Categories" : "WE GOT BEST VARIETY OF DELICIOUS"}
       </h2>
@@ -50,7 +70,7 @@ export default function CategoryContainer({ id }: { id?: number }) {
             role="listitem"
           >
             <Link
-              href={`/${category.id}`}
+              href={`/${category.slug}`}
               aria-label={`Browse ${category.name} category items`}
               className="w-full text-center"
               role="link"

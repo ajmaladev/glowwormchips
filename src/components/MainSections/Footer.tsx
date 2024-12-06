@@ -36,22 +36,33 @@ export const socialLinks = [
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "GLOW WORM Premium Snacks & Food Products",
-  description:
-    "Leading manufacturer and distributor of premium snacks and food products, specializing in high-quality chips and global flavors",
-  email: "glowwormchips@gmail.com",
-  telephone: ["+919995700791", "+919895193123"],
-  sameAs: [
+  "name": "GLOW WORM CHIPS Premium Snacks & Food Products",
+  "description": "Leading manufacturer and distributor of premium snacks and food products, specializing in high-quality chips and global flavors",
+  "email": "glowwormchips@gmail.com",
+  "telephone": ["+919995700791", "+919895193123"],
+  "sameAs": [
     "https://www.instagram.com/gwglowworm?igsh=ZnA2ZTQ5dDNqdWow",
     "https://www.facebook.com/share/18a2TKRW6e/?mibextid=LQQJ4d",
-    "https://maps.app.goo.gl/Z4GcQEdssMu9E6Ha7?g_st=iw",
+    "https://maps.app.goo.gl/Z4GcQEdssMu9E6Ha7?g_st=iw"
   ],
-  address: {
+  "address": {
     "@type": "PostalAddress",
-    addressCountry: "IN",
-    addressRegion: "Kerala",
-    addressLocality: "Malappuram",
+    "addressCountry": "IN",
+    "addressRegion": "Kerala",
+    "addressLocality": "Malappuram"
   },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer service",
+    "telephone": ["+919995700791", "+919895193123"],
+    "email": "glowwormchips@gmail.com",
+    "availableLanguage": ["English", "Malayalam"]
+  },
+  "employee": {
+    "@type": "Person",
+    "name": "Yaser Arafath",
+    "jobTitle": "Grievance officer"
+  }
 };
 
 export const Footer = () => {
@@ -74,21 +85,21 @@ export const Footer = () => {
         {/* Updated Logo Section */}
         <header className="relative z-10 mb-4 sm:mb-8 w-full">
           <h2 className="text-center text-white text-base md:text-[28.13px] font-medium font-['Jost'] tracking-wider">
-            GLOW WORM
+            GLOW WORM <span className="sr-only">CHIPS</span>
           </h2>
           <p className="text-center text-white text-base md:text-[28.13px] font-medium font-['Jost'] tracking-wider mt-4 sm:mt-8 md:mb-6">
-            <small>2024 CR Glow worm</small>
+            <small>2024 CR Glow worm <span className="sr-only">CHIPS</span></small>
           </p>
         </header>
 
         {/* Updated Main Content */}
         <article className="relative z-10 flex flex-col items-center justify-center max-w-7xl py-2 mx-auto sm:py-8 md:py-12 px-4">
-          <h3 className="sr-only">About GLOW WORM Premium Snacks</h3>
+          <h3 className="sr-only">About GLOW WORM <span className="sr-only">CHIPS</span> Premium Snacks</h3>
           <p
             className="mx-auto text-center text-white text-base md:text-[28.13px] font-normal font-['Jost'] leading-[21px] md:leading-[36.92px] tracking-wide md:tracking-wider mb-8 md:mb-12"
             aria-label="Company description"
           >
-            At GLOW WORM, we specialize in bringing the rich flavors of diverse
+            At GLOW WORM <span className="sr-only">CHIPS</span>, we specialize in bringing the rich flavors of diverse
             snacks and premium products to markets worldwide. our selection
             promises exceptional taste and quality in every bite. our products
             are designed to cater to global palates.
@@ -106,7 +117,7 @@ export const Footer = () => {
                 href="mailto:glowwormchips@gmail.com"
                 className="hover:underline"
                 itemProp="email"
-                aria-label="Send email to GLOW WORM"
+                aria-label="Send email to GLOW WORM CHIPS"
               >
                 glowwormchips@gmail.com
               </a>
@@ -162,11 +173,11 @@ export const Footer = () => {
       </footer>
       <Image
         src="/footer.svg"
-        alt="GLOW WORM Logo"
+        alt="GLOW WORM CHIPS Logo"
         width={100}
         height={100}
         className="w-full"
-      />{" "}
+      />
     </>
   );
 };

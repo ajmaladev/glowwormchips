@@ -1,0 +1,69 @@
+# www.robotstxt.org
+
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://glowwormchips.com/sitemap.xml
+
+# Specific rules for categories
+Allow: /biscuits
+Allow: /dry-fruits
+Allow: /banana-chips
+Allow: /murukku
+Allow: /tapioca-chips
+Allow: /many-others
+
+# Optimize crawl rate
+Crawl-delay: 1
+
+# Block specific paths
+Disallow: /api/
+Disallow: /_next/
+Disallow: /static/
+Disallow: /404
+Disallow: /500
+Disallow: /*.json$
+
+# Block preview pages
+Disallow: /*?preview=true
+
+# Additional rules for major search engines
+User-agent: Googlebot
+Allow: /
+Allow: /*.js
+Allow: /*.css
+Allow: /*.svg
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.png
+Allow: /*.gif
+
+User-agent: Bingbot
+Allow: /
+Allow: /*.js
+Allow: /*.css
+Allow: /*.svg
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.png
+Allow: /*.gif
+
+# Social media crawlers
+User-agent: Twitterbot
+Allow: /
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.png
+Allow: /*.gif
+
+User-agent: facebookexternalhit
+Allow: /
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.png
+Allow: /*.gif
+
+# Host
+Host: https://glowwormchips.com
