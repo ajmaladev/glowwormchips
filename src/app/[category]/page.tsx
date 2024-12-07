@@ -17,19 +17,14 @@ const getData = (categorySlug: string) => {
   const category = data.categories.find((c: Category) => c.slug === categorySlug);
   
   if (!category) {
-    console.error(`Category '${categorySlug}' not found`);
     throw new Error(`Category '${categorySlug}' not found`);
   }
 
-  const categoryProducts = data.products.filter(product => product.categoryId === category.id);
-  const otherCategories = data.categories.filter((c: Category) => c.id !== category.id);
-  const bestSellers = data.products.filter((product: Product) => product.tags?.includes("Best Seller"));
-  
   return {
     category,
-    products: categoryProducts,
-    otherCategories,
-    bestSellers
+    products: data.products.filter(product => product.categoryId === category.id),
+    otherCategories: data.categories.filter((c: Category) => c.id !== category.id),
+    bestSellers: data.products.filter((product: Product) => product.tags?.includes("Best Seller"))
   };
 };
 
@@ -75,7 +70,7 @@ export async function generateMetadata({ params }: PageProps) {
     openGraph: {
       title: `Buy ${category?.title || ''} Online | GLOW WORM CHIPS Kerala`,
       description,
-      url: `https://glowwormchips.com/${category?.slug}`,
+      url: `/${category?.slug}`,
       siteName: organizationInfo.name,
       images: [
         {
@@ -84,12 +79,14 @@ export async function generateMetadata({ params }: PageProps) {
           height: 600,
           alt: category?.alt || '',
         },
-        ...categoryProducts.filter(p => p.tags?.includes('Best Seller')).map(p => ({
-          url: p.image,
-          width: 800,
-          height: 600,
-          alt: p.alt,
-        }))
+        ...categoryProducts
+          .filter(p => p.tags?.includes('Best Seller'))
+          .map(p => ({
+            url: p.image,
+            width: 800,
+            height: 600,
+            alt: p.alt,
+          }))
       ],
       locale: 'en_US',
       type: 'website',
@@ -98,10 +95,21 @@ export async function generateMetadata({ params }: PageProps) {
       card: 'summary_large_image',
       title: `Buy ${category?.title || ''} Online | GLOW WORM CHIPS Kerala`,
       description,
-      images: [category?.image || '', ...categoryProducts.filter(p => p.tags?.includes('Best Seller')).map(p => p.image)],
+      images: [
+        category?.image || '',
+        ...categoryProducts
+          .filter(p => p.tags?.includes('Best Seller'))
+          .map(p => p.image)
+      ],
     },
     alternates: {
-      canonical: `https://glowwormchips.com/${category?.slug}`,
+      canonical: `/${category?.slug}`,
+      languages: {
+        'en-IN': `/${category?.slug}`,
+        'en': `/${category?.slug}`,
+        'ml': `/ml/${category?.slug}`,
+        'x-default': `/${category?.slug}`,
+      },
     },
     robots: {
       index: true,

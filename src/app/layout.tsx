@@ -66,7 +66,7 @@ export const viewport: Viewport = {
 
 // Metadata configuration
 export const metadata: Metadata = {
-  metadataBase: new URL('https://glowwormchips.com'),
+  metadataBase: new URL('https://www.glowwormchips.com'),
   title: {
     default: "GLOW WORM CHIPS | Premium Kerala Banana Chips & Traditional Snacks",
     template: "%s | GLOW WORM CHIPS - Kerala's Finest"
@@ -107,7 +107,7 @@ export const metadata: Metadata = {
     telephone: true,
   },
   alternates: {
-    canonical: 'https://glowwormchips.com',
+    canonical: '/',
     languages: {
       'en-US': '/en-US',
       'ml': '/ml',
