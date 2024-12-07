@@ -14,7 +14,7 @@ export default function DiscoverSection({ products }: { products: Product[] }) {
     >
       <div
         style={{
-          backgroundImage: `url(/discover-bg.png)`,
+          backgroundImage: `url(/glowwormchips-discover-bg.png)`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
         }}

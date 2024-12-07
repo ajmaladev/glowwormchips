@@ -54,7 +54,7 @@ export default function HeroSection({ title, sub_description, color }: HeroSecti
         >
           {sub_description}
         </p>
-        <meta itemProp="image" content="/logo.svg" />
+        <meta itemProp="image" content="/glowwormchips.svg" />
         <meta itemProp="publisher" content="GLOW WORM CHIPS Premium Snacks" />
       </section>
     </>

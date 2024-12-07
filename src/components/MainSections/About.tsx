@@ -27,7 +27,7 @@ export default function About() {
         width={1000}
         height={1000}
         className="absolute inset-0 w-full h-full object-cover transition-opacity duration-300"
-        src="/about-bg.svg"
+        src="/glowwormchips-about-bg.svg"
         alt="Decorative background pattern"
         priority
         aria-hidden="true"

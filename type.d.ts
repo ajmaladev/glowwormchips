@@ -18,6 +18,7 @@ export interface Product {
   image: string;
   alt: string;
   categoryId: number;
+  categorySlug: string;
   tags?: string[];
 }
 

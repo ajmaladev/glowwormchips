@@ -17,7 +17,7 @@ const structuredData = {
   name: "GLOW WORM CHIPS Premium Snacks",
   alternateName: ["Glow Worm Chips", "GlowWorm Chips"],
   url: "https://glowwormchips.com",
-  logo: "https://glowwormchips.com/logo.svg",
+  logo: "https://glowwormchips.com/glowwormchips.svg",
   description:
     "Premium manufacturer of authentic Kerala banana chips and traditional snacks.",
   address: {

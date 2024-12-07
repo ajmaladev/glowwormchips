@@ -107,7 +107,11 @@ export const metadata: Metadata = {
     telephone: true,
   },
   alternates: {
-    canonical: '/',
+    canonical: 'https://glowwormchips.com',
+    languages: {
+      'en-US': '/en-US',
+      'ml': '/ml',
+    },
   },
   openGraph: {
     title: "GLOW WORM CHIPS | Premium Kerala Snacks Delivered to Your Door",
@@ -146,7 +150,9 @@ export const metadata: Metadata = {
   },
   category: "Food & Beverage",
   verification: {
-    google: "your-google-verification-code",
+    google: 'your-google-verification-code',
+    yandex: 'your-yandex-verification-code',
+    yahoo: 'your-yahoo-verification-code',
   },
   appleWebApp: {
     capable: true,
@@ -171,11 +177,13 @@ export const metadata: Metadata = {
     "product:category": allCategories.join(", "),
     "product:best_seller": bestSellers.join(", "),
     "business:keywords": allProducts.join(", "),
-    "google-site-verification": "your-verification-code",
+    "google-site-verification": "your-google-verification-code",
     "msvalidate.01": "your-bing-verification-code",
     "yandex-verification": "your-yandex-verification-code",
     "business:contact_data:country_name": "India",
+    "facebook-domain-verification": "your-facebook-verification-code",
   },
+  manifest: '/manifest.json',
 };
 
 export default function RootLayout({

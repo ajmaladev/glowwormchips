@@ -1,5 +1,6 @@
 import HomePage from "@/components/Pages/HomePage";
 import { Metadata } from 'next';
+import data from '../../public/data.json';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://glowwormchips.com'),
@@ -38,7 +39,7 @@ export const metadata: Metadata = {
     siteName: 'GLOW WORM CHIPS',
     images: [
       {
-        url: 'https://glowwormchips.com/logo.svg',
+        url: 'https://glowwormchips.com/glowwormchips.svg',
         width: 1200,
         height: 630,
         alt: 'GLOW WORM CHIPS Premium Snacks'
@@ -49,7 +50,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'GLOW WORM CHIPS - Premium Kerala Snacks',
     description: 'Buy authentic Kerala banana chips online from GLOW WORM CHIPS Palakkad. Fresh, handmade snacks delivered across India.',
-    images: ['https://glowwormchips.com/logo.svg']
+    images: ['https://glowwormchips.com/glowwormchips.svg']
   },
   robots: {
     index: true,
@@ -66,19 +67,9 @@ export const metadata: Metadata = {
     google: 'your-google-verification-code',
   },
 };
-const getData = async() =>{
-  const apiUrl = "http://localhost:3000/api"
-  const hostedUrl = "https://glowwormchips.com/api"
-  const response = await fetch(`${hostedUrl}`,{
-    cache: 'force-cache'
-  });
-  return response.json();
-}
 
-export default async function Home() {
-  const data = await getData();
-  const products = data.products;
-  const categories = data.categories;
+export default function Home() {
+  const { products, categories } = data;
   return (
     <HomePage products={products} categories={categories} />
   );

@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Product } from "../../../../type";
 import { BouncyMotion } from "../../Globals/BouncyMotion";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 const generateProductStructuredData = (product: Product) => ({
   "@context": "https://schema.org",
@@ -49,7 +50,7 @@ export default function ProductCard({ product, bgColor, className, textSize }: {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(generateProductStructuredData(product)) }}
         />
-        <div className="flex flex-col relative">
+        <Link href={`/${product.categorySlug}`} className="flex flex-col relative">
           <figure className="w-[85%] aspect-[4/5] z-20">
             <Image
               src={isLoaded ? product.image : product.image.split(".svg")[0] + "-fallback.png"}
@@ -75,7 +76,7 @@ export default function ProductCard({ product, bgColor, className, textSize }: {
               {product.name}
             </h2>
           </div>
-        </div>
+        </Link>
       </article>
     </BouncyMotion>
   );

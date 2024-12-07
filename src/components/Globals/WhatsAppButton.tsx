@@ -17,7 +17,7 @@ export function WhatsAppButton() {
       aria-label="Contact us on WhatsApp to place an order"
     >
       <Image 
-        src="/social/WhatsApp.png"
+        src="/social/glowwormchips-whatsapp.png"
         alt="WhatsApp"
         width={24}
         height={24}

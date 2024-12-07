@@ -53,7 +53,7 @@ export default function BestSellers({ products }: { products: Product[] }) {
 
       <div
         style={{
-          backgroundImage: `url(/best-seller-bg.png)`,
+          backgroundImage: `url(/glowwormchips-best-seller-bg.png)`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
         }}
