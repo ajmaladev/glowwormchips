@@ -3,6 +3,7 @@ import data from '../../../public/data.json';
 
 export async function GET() {
   try {
+    console.log(data.categories);
     return NextResponse.json({
       categories: data.categories,
       products: data.products

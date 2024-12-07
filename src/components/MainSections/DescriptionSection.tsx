@@ -18,7 +18,7 @@ export default function DescriptionSection() {
       />
       <section 
         className="h-[943px] relative bg-white" 
-        style={{ backgroundImage: "url('/description-section-bg.svg')" }}
+        style={{ backgroundImage: "url('/glowwormchips-description-section-bg.svg')" }}
         role="region"
         aria-label="Product Description"
       >

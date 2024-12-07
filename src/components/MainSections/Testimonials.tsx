@@ -94,7 +94,7 @@ const Testimonials = () => {
 
         <div className="w-full max-w-3xl mx-auto relative">
           <Image
-            src="/quotation.png"
+            src="/glowwormchips-quotation.png"
             alt="testimonial-bg"
             width={1000}
             height={1000}

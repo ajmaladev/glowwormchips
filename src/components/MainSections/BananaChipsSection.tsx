@@ -6,7 +6,7 @@ export default function BananaChipsSection({ products }: { products: Product[] }
     <section className="flex flex-col gap-5" role="region" aria-label="Banana Chips Section">
       <div
         style={{
-            backgroundImage: `url(/delight-bg.png)`,
+            backgroundImage: `url(/glowwormchips-delight-bg.png)`,
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
         }}

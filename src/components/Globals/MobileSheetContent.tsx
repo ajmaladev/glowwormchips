@@ -32,7 +32,7 @@ export default function MobileSheetContent() {
           <SheetTitle>
             <Link href="/" className="flex items-center absolute top-10 left-0" aria-label="Go to homepage">
               <Image
-                src="/logo.svg"
+                src="/glowwormchips.svg"
                 alt="Glow Worm Logo"
                 width={158}
                 height={98}
@@ -101,6 +101,15 @@ export default function MobileSheetContent() {
               aria-label="About section"
             >
               About
+            </Link>
+          </div>
+          <div className="inline-flex">
+            <Link
+              href="/blog"
+              className="w-[204px] text-white text-xl font-normal font-['Jost']"
+              aria-label="Blog section"
+            >
+              Blog
             </Link>
           </div>
         </nav>

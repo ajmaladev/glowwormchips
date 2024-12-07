@@ -13,14 +13,25 @@ export const dynamic = 'force-static'
 export const revalidate = false
 export const fetchCache = 'force-cache'
 
-const getData = async(category:string) =>{
-  const apiUrl = "http://localhost:3000/api"
-  const hostedUrl = "https://glowwormchips.com/api"
-  const response = await fetch(`${hostedUrl}/${category}`,{
-    cache: 'force-cache'
-  });
-  return response.json();
-}
+const getData = (categorySlug: string) => {
+  const category = data.categories.find((c: Category) => c.slug === categorySlug);
+  
+  if (!category) {
+    console.error(`Category '${categorySlug}' not found`);
+    throw new Error(`Category '${categorySlug}' not found`);
+  }
+
+  const categoryProducts = data.products.filter(product => product.categoryId === category.id);
+  const otherCategories = data.categories.filter((c: Category) => c.id !== category.id);
+  const bestSellers = data.products.filter((product: Product) => product.tags?.includes("Best Seller"));
+  
+  return {
+    category,
+    products: categoryProducts,
+    otherCategories,
+    bestSellers
+  };
+};
 
 export function generateStaticParams() {
   return data.categories.map((category) => ({
@@ -139,7 +150,7 @@ export async function generateMetadata({ params }: PageProps) {
 
 export default async function Page({ params }: PageProps) {
   const param = await params;
-  const { category, products, otherCategories, bestSellers } = await getData(param.category)
+  const { category, products, otherCategories, bestSellers } = getData(param.category);
   return <CategoryPage 
     category={category} 
     products={products} 

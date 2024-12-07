@@ -10,19 +10,19 @@ const cards = [
     id: 1,
     title: "Premium Gourmet Potato Chips",
     description: "Artisanal Premium Potato Chips - Handcrafted in Small Batches with Natural Ingredients",
-    image: "/carousel/carousel-1.svg",
+    image: "/carousel/glowwormchips-carousel-1.svg",
   },
   {
     id: 2,
     title: "Premium Quality Ingredients",
     description: "Organic Premium Ingredients - Sourced from Local Farmers for Superior Quality Snacks",
-    image: "/carousel/carousel-2.svg",
+    image: "/carousel/glowwormchips-carousel-2.svg",
   },
   {
     id: 3,
     title: "Artisanal Snack Collection",
     description: "Gourmet Artisanal Snacks - Crafted with Love for an Exceptional Snacking Experience",
-    image: "/carousel/carousel-3.svg",
+    image: "/carousel/glowwormchips-carousel-3.svg",
   },
 ];
 

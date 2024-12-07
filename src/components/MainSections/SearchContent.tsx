@@ -7,34 +7,17 @@ import {
   DrawerClose,
 } from "@/components/ui/drawer";
 import Image from "next/image";
-import { CategoriesData } from "../../../type";
+import data from "../../../public/data.json";
 import Link from "next/link";
 import { BouncyMotion } from "../Globals/BouncyMotion";
 import { Search, Tag } from "lucide-react";
 
 export default function SearchContent() {
   const [searchTerm, setSearchTerm] = useState("");
-  const [data, setData] = useState<CategoriesData | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
   const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     inputRef.current?.focus();
-  }, []);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch("/data.json");
-        const jsonData = await response.json();
-        setData(jsonData);
-      } catch (error) {
-        console.error("Error loading data:", error);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-    fetchData();
   }, []);
 
   const searchResults = useMemo(() => {
@@ -78,14 +61,14 @@ export default function SearchContent() {
     children: React.ReactNode;
   }) => (
     <DrawerClose asChild>
-      <Link href={`/${category.id}`} className="block">
+      <Link href={`/${category.slug}`} className="block">
         {children}
       </Link>
     </DrawerClose>
   );
 
   return (
-    <DrawerContent className="max-h-[90vh]">
+    <DrawerContent className="max-h-[80vh] md:max-h-[90vh]">
       <DrawerHeader className="border-b">
         <DrawerTitle className="text-2xl font-['Jost'] text-[#0c3614]">
           Browse Our Collection
@@ -98,10 +81,11 @@ export default function SearchContent() {
             ref={inputRef}
             type="text"
             placeholder="Search products, categories..."
-            className="w-full p-3 pl-12 pr-10 text-lg border rounded-lg outline-none focus:ring-2 focus:ring-[#0c3614] focus:border-transparent font-['Jost']"
+            className="w-full p-3 pl-12 pr-10 text-lg border rounded-lg outline-none focus:ring-2 focus:ring-[#0c3614] focus:border-transparent font-['Jost'] bg-slate-50"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             aria-label="Search products and categories"
+            style={{ backgroundColor: "aliceblue" }}
           />
           <Search
             className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
@@ -132,98 +116,96 @@ export default function SearchContent() {
       </div>
 
       <div className="overflow-y-auto p-4">
-        {isLoading ? (
-          <div className="text-center py-8">Loading...</div>
-        ) : (
-          <div className="space-y-8">
-            {/* Categories Section */}
-            {searchResults.categories.length > 0 && (
-              <div>
-                <h3 className="text-xl font-['Jost'] text-[#0c3614] mb-4 flex items-center gap-2">
-                  Categories
-                  {searchTerm && (
-                    <span className="text-sm text-gray-500">
-                      ({searchResults.categories.length} results)
-                    </span>
-                  )}
-                </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {searchResults.categories.map((category, index) => (
-                    <BouncyMotion 
-                      key={category.id}
-                      initialY={-10}
-                      transition={{
+        <div className="space-y-8">
+          {/* Categories Section */}
+          {searchResults.categories.length > 0 && (
+            <div>
+              <h3 className="text-xl font-['Jost'] text-[#0c3614] mb-4 flex items-center gap-2">
+                Categories
+                {searchTerm && (
+                  <span className="text-sm text-gray-500">
+                    ({searchResults.categories.length} results)
+                  </span>
+                )}
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {searchResults.categories.map((category, index) => (
+                  <BouncyMotion
+                    key={category.id}
+                    initialY={-10}
+                    transition={{
+                      type: "spring",
+                      duration: 0.3,
+                      bounce: 0.1,
+                      delay: index * 0.03,
+                      scale: {
                         type: "spring",
-                        duration: 0.3,
-                        bounce: 0.1,
-                        delay: index * 0.03,
-                        scale: {
-                          type: "spring",
-                          damping: 20,
-                          stiffness: 300,
-                          restDelta: 0.001
-                        }
-                      }}
-                    >
-                      <CategoryLink category={category}>
-                        <div
-                          className="flex items-center p-4 bg-white rounded-lg border hover:shadow-lg transition-shadow"
-                          style={{ backgroundColor: `${category.color}20` }}
-                        >
-                          <Image
-                            src={category.image}
-                            alt={category.alt}
-                            width={80}
-                            height={80}
-                            className="object-contain"
-                          />
-                          <div className="ml-4">
-                            <h4 className="font-['Jost'] text-lg text-[#0c3614]">
-                              {category.name}
-                            </h4>
-                            <p className="text-sm text-gray-600 line-clamp-2">
-                              {category.short_description}
-                            </p>
-                          </div>
+                        damping: 20,
+                        stiffness: 300,
+                        restDelta: 0.001,
+                      },
+                    }}
+                  >
+                    <CategoryLink category={category}>
+                      <div
+                        className="flex items-center p-4 bg-white rounded-lg border hover:shadow-lg transition-shadow"
+                        style={{ backgroundColor: `${category.color}20` }}
+                      >
+                        <Image
+                          src={category.image}
+                          alt={category.alt}
+                          width={80}
+                          height={80}
+                          className="object-contain"
+                        />
+                        <div className="ml-4">
+                          <h4 className="font-['Jost'] text-lg text-[#0c3614]">
+                            {category.name}
+                          </h4>
+                          <p className="text-sm text-gray-600 line-clamp-2">
+                            {category.short_description}
+                          </p>
                         </div>
-                      </CategoryLink>
-                    </BouncyMotion>
-                  ))}
-                </div>
+                      </div>
+                    </CategoryLink>
+                  </BouncyMotion>
+                ))}
               </div>
-            )}
+            </div>
+          )}
 
-            {/* Products Section */}
-            {searchResults.products.length > 0 && (
-              <div>
-                <h3 className="text-xl font-['Jost'] text-[#0c3614] mb-4 flex items-center gap-2">
-                  Products
-                  {searchTerm && (
-                    <span className="text-sm text-gray-500">
-                      ({searchResults.products.length} results)
-                    </span>
-                  )}
-                </h3>
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                  {searchResults.products.map((product, index) => (
-                    <BouncyMotion 
-                      key={product.id}
-                      initialY={-10}
-                      transition={{
+          {/* Products Section */}
+          {searchResults.products.length > 0 && (
+            <div>
+              <h3 className="text-xl font-['Jost'] text-[#0c3614] mb-4 flex items-center gap-2">
+                Products
+                {searchTerm && (
+                  <span className="text-sm text-gray-500">
+                    ({searchResults.products.length} results)
+                  </span>
+                )}
+              </h3>
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                {searchResults.products.map((product, index) => (
+                  <BouncyMotion
+                    key={product.id}
+                    initialY={-10}
+                    transition={{
+                      type: "spring",
+                      duration: 0.3,
+                      bounce: 0.1,
+                      delay: index * 0.03,
+                      scale: {
                         type: "spring",
-                        duration: 0.3,
-                        bounce: 0.1,
-                        delay: index * 0.03,
-                        scale: {
-                          type: "spring",
-                          damping: 20,
-                          stiffness: 300,
-                          restDelta: 0.001
-                        }
-                      }}
-                      className="h-full"
-                    >
-                      <div className="relative p-4 bg-white rounded-lg border hover:shadow-lg transition-shadow h-full flex flex-col">
+                        damping: 20,
+                        stiffness: 300,
+                        restDelta: 0.001,
+                      },
+                    }}
+                    className="h-full"
+                  >
+                    <DrawerClose asChild>
+                      <Link href={`/${product.categorySlug}`} className="relative p-4 bg-white rounded-lg border hover:shadow-lg transition-shadow h-full flex flex-col">
                         <div className="relative h-32 mb-2 flex-shrink-0">
                           <Image
                             src={product.image}
@@ -240,23 +222,23 @@ export default function SearchContent() {
                             <Tag size={16} className="text-[#0c3614]" />
                           </div>
                         )}
-                      </div>
-                    </BouncyMotion>
-                  ))}
-                </div>
+                      </Link>
+                    </DrawerClose>
+                  </BouncyMotion>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* No Results */}
+          {searchTerm &&
+            searchResults.categories.length === 0 &&
+            searchResults.products.length === 0 && (
+              <div className="text-center py-8 text-gray-500">
+                No results found for "{searchTerm}"
               </div>
             )}
-
-            {/* No Results */}
-            {searchTerm &&
-              searchResults.categories.length === 0 &&
-              searchResults.products.length === 0 && (
-                <div className="text-center py-8 text-gray-500">
-                  No results found for "{searchTerm}"
-                </div>
-              )}
-          </div>
-        )}
+        </div>
       </div>
     </DrawerContent>
   );

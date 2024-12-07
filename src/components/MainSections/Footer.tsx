@@ -5,28 +5,28 @@ export const socialLinks = [
   {
     id: 1,
     name: "Instagram",
-    icon: "/social/Instagram.png",
+    icon: "/social/glowwormchips-instagram.png",
     href: "https://www.instagram.com/gwglowworm?igsh=ZnA2ZTQ5dDNqdWow",
     ariaLabel: "Visit our Instagram page",
   },
   {
     id: 2,
     name: "WhatsApp",
-    icon: "/social/WhatsApp.png",
+    icon: "/social/glowwormchips-whatsapp.png",
     href: "https://wa.me/919995700791?text=Hi%20there",
     ariaLabel: "Contact us on WhatsApp",
   },
   {
     id: 3,
     name: "Facebook",
-    icon: "/social/Facebook.png",
+    icon: "/social/glowwormchips-facebook.png",
     href: "https://www.facebook.com/share/18a2TKRW6e/?mibextid=LQQJ4d",
     ariaLabel: "Visit our Facebook page",
   },
   {
     id: 4,
     name: "Google Maps",
-    icon: "/social/Google Maps.png",
+    icon: "/social/glowwormchips-google-maps.png",
     href: "https://maps.app.goo.gl/Z4GcQEdssMu9E6Ha7?g_st=iw",
     ariaLabel: "Find us on Google Maps",
   },
@@ -170,9 +170,14 @@ export const Footer = () => {
             </BouncyMotion>
           ))}
         </nav>
+
+        {/* Hidden sitemap link for search engines */}
+        <div className="hidden">
+          <a href="/sitemap.xml" aria-hidden="true">Sitemap</a>
+        </div>
       </footer>
       <Image
-        src="/footer.svg"
+        src="/glowwormchips-footer.svg"
         alt="GLOW WORM CHIPS Logo"
         width={100}
         height={100}

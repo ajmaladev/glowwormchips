@@ -1,5 +1,5 @@
-"use client";
 
+"use client"
 import Image from "next/image";
 import Link from "next/link";
 import { FiSearch } from "react-icons/fi";
@@ -9,9 +9,6 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import SearchContent from "./SearchContent";
-import { useState } from "react";
-import { CategoriesData } from "../../../type";
-import { useEffect } from "react";
 import MobileSheetContent from "../Globals/MobileSheetContent";
 
 export default function NavBar() {
@@ -25,21 +22,6 @@ export default function NavBar() {
       behavior: "smooth",
     });
   };
-  const [data, setData] = useState<CategoriesData>({
-    categories: [],
-    products: [],
-  });
-
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch("/data.json");
-      const jsonData: CategoriesData = await response.json();
-      setData(jsonData);
-    };
-
-    fetchData();
-  }, []);
 
   // Add structured data for navigation
   const navStructuredData = {
@@ -90,7 +72,7 @@ export default function NavBar() {
           aria-label="Go to homepage"
         >
           <Image
-            src="/logo.svg"
+            src="/glowwormchips.svg"
             alt="Glow Worm Chips Logo"
             width={96}
             height={64}
@@ -110,6 +92,14 @@ export default function NavBar() {
             suppressHydrationWarning={true}
           >
             Home
+          </Link>
+          <Link
+            className="text-black text-sm font-normal font-['Jost'] hover:text-[#0c3614] transition-colors duration-200"
+            href="/blog"
+            role="menuitem"
+            suppressHydrationWarning={true}
+          >
+            Blog
           </Link>
           <Link
             className="text-black text-sm font-normal font-['Jost'] hover:text-[#0c3614] transition-colors duration-200"

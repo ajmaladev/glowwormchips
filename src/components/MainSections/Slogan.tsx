@@ -24,7 +24,7 @@ export default function Slogan() {
       <div 
         className="absolute inset-0"
         style={{
-          backgroundImage: `url(/slogan-bg.svg)`,
+          backgroundImage: `url(/glowwormchips-slogan-bg.svg)`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
         }}
