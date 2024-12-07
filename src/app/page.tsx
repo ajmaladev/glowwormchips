@@ -25,21 +25,17 @@ export const metadata: Metadata = {
     'authentic Kerala chips',
     'GLOW WORM CHIPS online store',
     'buy Kerala snacks Palakkad',
-    'GLOW WORM Chips',
-    'Glowworm chips Palakkad',
-    'Glowworm chips Kerala',
-    'Glowworm banana chips'
   ],
   openGraph: {
     type: 'website',
     locale: 'en_IN',
-    url: 'https://glowwormchips.com',
+    url: '/',
     title: 'GLOW WORM CHIPS - Premium Kerala Banana Chips Palakkad',
     description: 'Buy authentic Kerala banana chips online from GLOW WORM CHIPS Palakkad. Fresh, handmade snacks delivered across India.',
     siteName: 'GLOW WORM CHIPS',
     images: [
       {
-        url: 'https://glowwormchips.com/glowwormchips.svg',
+        url: '/glowwormchips.svg',
         width: 1200,
         height: 630,
         alt: 'GLOW WORM CHIPS Premium Snacks'
@@ -50,7 +46,16 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'GLOW WORM CHIPS - Premium Kerala Snacks',
     description: 'Buy authentic Kerala banana chips online from GLOW WORM CHIPS Palakkad. Fresh, handmade snacks delivered across India.',
-    images: ['https://glowwormchips.com/glowwormchips.svg']
+    images: ['/glowwormchips.svg']
+  },
+  alternates: {
+    canonical: '/',
+    languages: {
+      'en-IN': '/',
+      'en': '/',
+      'ml': '/ml',
+      'x-default': '/',
+    },
   },
   robots: {
     index: true,
@@ -70,7 +75,5 @@ export const metadata: Metadata = {
 
 export default function Home() {
   const { products, categories } = data;
-  return (
-    <HomePage products={products} categories={categories} />
-  );
+  return <HomePage products={products} categories={categories} />;
 }

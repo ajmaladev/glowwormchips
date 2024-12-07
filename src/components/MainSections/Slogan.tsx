@@ -32,8 +32,21 @@ export default function Slogan() {
       
       <div className="relative z-10 flex flex-col items-start md:items-center font-black justify-center px-4 md:px-6 lg:px-8">
         <h1 
-          className="text-xl md:text-3xl lg:text-4xl font-black font-['Montserrat'] leading-[33.10px] md:leading-[60.47px] lg:leading-[60.47px] tracking-[4.02px] bg-gradient-to-r from-[#f85741] to-[#f5a644] text-transparent bg-clip-text text-left lg:text-start max-w-[1033px]"
-          itemScope itemType="https://schema.org/Product"
+          className={`
+            text-xl md:text-3xl lg:text-4xl 
+            font-black font-['Montserrat'] 
+            leading-[33.10px] md:leading-[60.47px] lg:leading-[60.47px] 
+            tracking-[4.02px] text-left lg:text-start max-w-[1033px]
+            bg-gradient-to-r from-[#f85741] to-[#f5a644] 
+            text-transparent bg-clip-text
+          `}
+          style={{
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            color: '#f85741' // Fallback color
+          }}
+          itemScope 
+          itemType="https://schema.org/Product"
         >
           <span itemProp="name">
             GLOW WORM <span className="sr-only">CHIPS</span>

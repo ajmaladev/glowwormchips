@@ -56,7 +56,7 @@ export default function ProductCard({ product, bgColor, className, textSize }: {
               src={isLoaded ? product.image : product.image.split(".svg")[0] + "-fallback.png"}
               alt={`${product.name} product image`}
               fill
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              sizes="(max-width: 480px) 85vw, (max-width: 768px) 45vw, (max-width: 1200px) 30vw, 25vw"
               className="object-contain rounded-lg"
               style={{
                 opacity: 1,
@@ -65,8 +65,9 @@ export default function ProductCard({ product, bgColor, className, textSize }: {
               }}
               loading="eager"
               quality={100}
+              placeholder="blur"
+              blurDataURL={product.image}
               priority={true}
-              unoptimized={true}
               itemProp="image"
               aria-label={`${product.name} - GLOW WORM CHIPS Premium Snacks`}
             />
