@@ -94,7 +94,6 @@ export function MainCarousel() {
                 onError={(e) => {
                   (e.target as HTMLImageElement).src = "/fallback-image.png";
                 }}
-                unoptimized={false} 
               />
             </motion.div>
           </AnimatePresence>

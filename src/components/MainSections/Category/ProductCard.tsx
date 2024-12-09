@@ -80,7 +80,6 @@ export default function ProductCard({
               }}
               placeholder="blur"
               blurDataURL={fallbackImage}
-              unoptimized={false}
               priority
               onError={(e) => {
                 (e.target as HTMLImageElement).src = fallbackImage;
