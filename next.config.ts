@@ -4,7 +4,7 @@ const nextConfig: NextConfig = {
   // Enable React strict mode
   reactStrictMode: true,
   trailingSlash: true,
-
+  // output: "export",
   // Image optimization settings
   images: {
     // Modern device sizes for responsive images

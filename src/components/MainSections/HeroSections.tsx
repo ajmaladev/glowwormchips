@@ -5,7 +5,8 @@ const heroStructuredData = {
   "@context": "https://schema.org",
   "@type": "WebPageElement",
   name: "Hero Section",
-  description: "Featured products and promotions from GLOW WORM CHIPS Premium Snacks",
+  description:
+    "Featured products and promotions from GLOW WORM CHIPS Premium Snacks",
   mainEntityOfPage: {
     "@type": "WebPage",
     "@id": "https://glowwormchips.com",

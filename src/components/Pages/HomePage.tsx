@@ -29,7 +29,7 @@ const structuredData = {
   },
   contactPoint: {
     "@type": "ContactPoint",
-    telephone: "+919995700791",
+    telephone: "+919895193123",
     contactType: "customer service",
     availableLanguage: ["English", "Malayalam"],
   },
