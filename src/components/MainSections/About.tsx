@@ -6,7 +6,7 @@ import { AboutButtons } from "../Globals/AboutButtons";
 export default function About() {
   const handleWhatsAppClick = () => {
     const encodedMessage = encodeURIComponent(WHATSAPP_MESSAGE);
-    window.open(`https://wa.me/919995700791?text=${encodedMessage}`, "_blank");
+    window.open(`https://wa.me/919895193123?text=${encodedMessage}`, "_blank");
   };
 
   return (

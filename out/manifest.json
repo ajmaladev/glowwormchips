@@ -1,0 +1,9 @@
+{
+  "name": "GLOW WORM CHIPS",
+  "short_name": "GW Chips",
+  "description": "Premium Kerala Banana Chips & Traditional Snacks",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#5db046"
+}

@@ -8,28 +8,38 @@ import Link from "next/link";
 const generateProductStructuredData = (product: Product) => ({
   "@context": "https://schema.org",
   "@type": "Product",
-  "name": product.name,
-  "image": product.image,
-  "brand": {
+  name: product.name,
+  image: product.image,
+  brand: {
     "@type": "Brand",
-    "name": "GLOW WORM CHIPS"
+    name: "GLOW WORM CHIPS",
   },
-  "offers": {
+  offers: {
     "@type": "Offer",
-    "availability": "https://schema.org/InStock",
-    "priceCurrency": "INR"
-  }
+    availability: "https://schema.org/InStock",
+    priceCurrency: "INR",
+  },
 });
 
-export default function ProductCard({ product, bgColor, className, textSize }: { product: Product, bgColor?: string, className?: string, textSize?: string }) {
+export default function ProductCard({
+  product,
+  bgColor,
+  className,
+  textSize,
+}: {
+  product: Product;
+  bgColor?: string;
+  className?: string;
+  textSize?: string;
+}) {
   const [isLoaded, setIsLoaded] = useState(false);
-
-  useEffect(()=>{
+  const fallbackImage = product.image.split(".svg")[0] + "-fallback.png";
+  useEffect(() => {
     setIsLoaded(true);
-  },[])
+  }, []);
 
   return (
-    <BouncyMotion 
+    <BouncyMotion
       initialY={10}
       style={{}}
       transition={{
@@ -39,8 +49,8 @@ export default function ProductCard({ product, bgColor, className, textSize }: {
         stiffness: 100,
       }}
     >
-      <article 
-        className={`pt-6 ${className?className:""}`} 
+      <article
+        className={`pt-6 ${className ? className : ""}`}
         aria-label={`Product: ${product.name}`}
         itemScope
         itemType="https://schema.org/Product"
@@ -48,32 +58,45 @@ export default function ProductCard({ product, bgColor, className, textSize }: {
       >
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(generateProductStructuredData(product)) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(generateProductStructuredData(product)),
+          }}
         />
-        <Link href={`/${product.categorySlug}`} className="flex flex-col relative">
-          <figure className="w-[85%] aspect-[4/5] z-20">
+        <Link
+          href={`/${product.categorySlug}`}
+          className="flex flex-col relative"
+        >
+          <figure className="w-[85%] aspect-[4/5] z-20 relative mx-auto">
             <Image
-              src={isLoaded ? product.image : product.image.split(".svg")[0] + "-fallback.png"}
+              src={product.image}
               alt={`${product.name} product image`}
               fill
-              sizes="(max-width: 480px) 85vw, (max-width: 768px) 45vw, (max-width: 1200px) 30vw, 25vw"
+              sizes="(max-width: 480px) 100vw, (max-width: 768px) 75vw, (max-width: 1200px) 50vw, 25vw"
               className="object-contain rounded-lg"
               style={{
                 opacity: 1,
-                transform: 'scale(1)',
-                transition: 'all 0.5s ease-in-out'
+                transform: "scale(1)",
+                transition: "all 0.5s ease-in-out",
               }}
-              loading="eager"
-              quality={100}
               placeholder="blur"
-              blurDataURL={product.image}
-              priority={true}
-              itemProp="image"
+              blurDataURL={fallbackImage}
+              priority
+              onError={(e) => {
+                (e.target as HTMLImageElement).src = fallbackImage;
+              }}
               aria-label={`${product.name} - GLOW WORM CHIPS Premium Snacks`}
             />
           </figure>
-          <div className={`w-full mt-2 absolute -bottom-20 z-10 flex items-end justify-center px-4 py-2  rounded-tl-3xl rounded-tr-[55px] md:rounded-tr-[75px] rounded-b-lg shadow-sm pb-6 md:pb-10 ${bgColor}`}>
-            <h2 className={`text-[#333333] pt-9 z-30 leading-tight font-normal font-['Jost'] text-center ${textSize||"text-lg sm:text-xl md:text-[20.90px] lg:text-3xl"}`} itemProp="name">
+
+          <div
+            className={`w-full md:mt-2 absolute -bottom-20 z-10 flex items-end justify-center px-4 md-py-2  rounded-tl-3xl rounded-tr-[55px] md:rounded-tr-[75px] rounded-b-lg shadow-sm pb-6 md:pb-10 ${bgColor}`}
+          >
+            <h2
+              className={`text-[#333333] pt-9 z-30 leading-tight font-normal font-['Jost'] text-center ${
+                textSize || "text-lg sm:text-xl md:text-[20.90px] lg:text-3xl"
+              }`}
+              itemProp="name"
+            >
               {product.name}
             </h2>
           </div>

@@ -24,7 +24,7 @@ export default function Slogan() {
       <div 
         className="absolute inset-0"
         style={{
-          backgroundImage: `url(/glowwormchips-slogan-bg.svg)`,
+          backgroundImage: `url(/glowwormchips-category-slogan-background-bakery-snacks-palakkad-kerala-india.svg)`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
         }}
@@ -37,14 +37,10 @@ export default function Slogan() {
             font-black font-['Montserrat'] 
             leading-[33.10px] md:leading-[60.47px] lg:leading-[60.47px] 
             tracking-[4.02px] text-left lg:text-start max-w-[1033px]
+            text-[#f85741]  /* Fallback solid color */
             bg-gradient-to-r from-[#f85741] to-[#f5a644] 
             text-transparent bg-clip-text
           `}
-          style={{
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            color: '#f85741' // Fallback color
-          }}
           itemScope 
           itemType="https://schema.org/Product"
         >

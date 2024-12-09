@@ -9,10 +9,6 @@ type PageProps = {
   }>
 }
 
-export const dynamic = 'force-static'
-export const revalidate = false
-export const fetchCache = 'force-cache'
-
 const getData = (categorySlug: string) => {
   const category = data.categories.find((c: Category) => c.slug === categorySlug);
   

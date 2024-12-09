@@ -161,7 +161,7 @@ export const metadata: Metadata = {
   },
   other: {
     "contact:email": "glowwormchips@gmail.com",
-    "contact:phone": "+919995700791",
+    "contact:phone": "+919895193123",
     "business:contact_data:street_address": "Malappuram",
     "business:contact_data:locality": "Kerala",
     "business:contact_data:region": "Kerala",

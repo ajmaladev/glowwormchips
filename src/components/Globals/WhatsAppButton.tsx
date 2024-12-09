@@ -7,7 +7,7 @@ import Image from "next/image";
 export function WhatsAppButton() {
   const handleOrderClick = () => {
     const encodedMessage = encodeURIComponent(WHATSAPP_MESSAGE);
-    window.open(`https://wa.me/919995700791?text=${encodedMessage}`, '_blank');
+    window.open(`https://wa.me/919895193123?text=${encodedMessage}`, '_blank');
   };
 
   return (
@@ -17,7 +17,7 @@ export function WhatsAppButton() {
       aria-label="Contact us on WhatsApp to place an order"
     >
       <Image 
-        src="/social/glowwormchips-whatsapp.png"
+        src="/social/glow-worm-chips-whatsapp.png"
         alt="WhatsApp"
         width={24}
         height={24}

@@ -12,8 +12,8 @@ export const socialLinks = [
   {
     id: 2,
     name: "WhatsApp",
-    icon: "/social/glowwormchips-whatsapp.png",
-    href: "https://wa.me/919995700791?text=Hi%20there",
+    icon: "/social/glow-worm-chips-whatsapp.png",
+    href: "https://wa.me/919895193123?text=Hi%20there",
     ariaLabel: "Contact us on WhatsApp",
   },
   {
