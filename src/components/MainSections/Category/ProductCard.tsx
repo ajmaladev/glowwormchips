@@ -32,11 +32,7 @@ export default function ProductCard({
   className?: string;
   textSize?: string;
 }) {
-  const [isLoaded, setIsLoaded] = useState(false);
-  const fallbackImage = product.image.split(".svg")[0] + "-fallback.png";
-  useEffect(() => {
-    setIsLoaded(true);
-  }, []);
+
 
   return (
     <BouncyMotion
@@ -76,9 +72,6 @@ export default function ProductCard({
                 opacity: 1,
                 transform: "scale(1)",
                 transition: "all 0.5s ease-in-out",
-              }}
-              onError={(e) => {
-                (e.target as HTMLImageElement).src = fallbackImage;
               }}
               aria-label={`${product.name} - GLOW WORM CHIPS Premium Snacks`}
             />

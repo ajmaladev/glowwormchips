@@ -103,7 +103,7 @@ export default function NavBar() {
           </Link>
           <Link
             className="text-black text-sm font-normal font-['Jost'] hover:text-[#0c3614] transition-colors duration-200"
-            href="/"
+            href="#footer"
             role="menuitem"
             onClick={scrollToSection("#footer")}
             suppressHydrationWarning={true}
@@ -114,7 +114,6 @@ export default function NavBar() {
             className="text-black text-sm font-normal font-['Jost'] hover:text-[#0c3614] transition-colors duration-200"
             href="/"
             role="menuitem"
-            onClick={scrollToSection("#about")}
             suppressHydrationWarning={true}
           >
             About

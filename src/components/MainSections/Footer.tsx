@@ -69,7 +69,7 @@ export const Footer = () => {
   return (
     <>
       <footer
-        className="p-4 sm:p-8 bg-[#2d2d2d] flex flex-col items-center "
+        className="p-4 sm:p-8 bg-[#1d1d1d] flex flex-col items-center "
         role="contentinfo"
         aria-label="Site footer"
         id="footer"
@@ -142,6 +142,7 @@ export const Footer = () => {
                 +91 9895 193 123
               </a>
             </p>
+            <p className="text-center text-white text-base md:text-[28.13px] mt-4 font-medium font-['Jost'] leading-[36.92px] tracking-wider">2nd mile, Palakkad - Ponnani Rd, Kallekkad<br/> Palakkad, Kerala 678006</p>
           </address>
         </article>
 
