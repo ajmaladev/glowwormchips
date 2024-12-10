@@ -9,27 +9,27 @@ const benefitsData = [
   {
     id: 1,
     title: "NATURAL",
-    icon: "/benifit/glowwormchips-n.svg",
+    icon: "/benifit/glowwormchips-n.webp",
   },
   {
     id: 2,
     title: ["NOTHING", "ARTIFICIAL"],
-    icon: "/benifit/glowwormchips-na.svg",
+    icon: "/benifit/glowwormchips-na.webp",
   },
   {
     id: 3,
     title: "FRESH",
-    icon: "/benifit/glowwormchips-fresh.svg",
+    icon: "/benifit/glowwormchips-fresh.webp",
   },
   {
     id: 4,
     title: ["DELICIOUSLY", "CRUNCHY"],
-    icon: "/benifit/glowwormchips-dc.svg",
+    icon: "/benifit/glowwormchips-dc.webp",
   },
   {
     id: 5,
     title: "HAND FREE",
-    icon: "/benifit/glowwormchips-hf.svg",
+    icon: "/benifit/glowwormchips-hf.webp",
   },
 ];
 
