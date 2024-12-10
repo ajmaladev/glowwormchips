@@ -1,12 +1,17 @@
 import type { NextConfig } from "next";
 
+const repoName = 'glowwormchips';
+
 const nextConfig: NextConfig = {
   // Enable React strict mode
+  assetPrefix:  `/${repoName}/`,
+  basePath:  `/${repoName}`,
   reactStrictMode: true,
   trailingSlash: true,
   output: "export",
   // Image optimization settings
   images: {
+    unoptimized: true,
     // Modern device sizes for responsive images
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048],
     imageSizes: [16, 32, 48, 64, 96, 128, 256],
