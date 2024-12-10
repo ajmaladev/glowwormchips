@@ -12,7 +12,7 @@ const cards = [
     description:
       "Artisanal Premium Potato Chips - Handcrafted in Small Batches with Natural Ingredients",
     image:
-      "/carousel/glowwormchips-adverticement 1-every-chip-tell-a-tale-of-flavor--snack-packet-bakery-snacks-palakkad-kerala-india.svg",
+      "/carousel/glowwormchips-adverticement 1-every-chip-tell-a-tale-of-flavor--snack-packet-bakery-snacks-palakkad-kerala-india.webp",
   },
   {
     id: 2,
@@ -20,7 +20,7 @@ const cards = [
     description:
       "Organic Premium Ingredients - Sourced from Local Farmers for Superior Quality Snacks",
     image:
-      "/carousel/glowwormchips-adverticement-2-we-choose-the-finest-for-you-snack-packet-bakery-tapioca-snacks-palakkad-kerala-india.svg",
+      "/carousel/glowwormchips-adverticement-2-we-choose-the-finest-for-you-snack-packet-bakery-tapioca-snacks-palakkad-kerala-india.webp",
   },
   {
     id: 3,
@@ -28,7 +28,7 @@ const cards = [
     description:
       "Gourmet Artisanal Snacks - Crafted with Love for an Exceptional Snacking Experience",
     image:
-      "/carousel/glowwormchips-adverticement-3-every-snack-sparks-joy-snack-packet-biscuits-bakery-snacks-palakkad-kerala-india.svg",
+      "/carousel/glowwormchips-adverticement-3-every-snack-sparks-joy-snack-packet-biscuits-bakery-snacks-palakkad-kerala-india.webp",
   },
 ];
 
@@ -91,10 +91,6 @@ export function MainCarousel() {
                 blurDataURL={cards[currentIndex].image}
                 draggable="false"
                 itemProp="contentUrl"
-                onError={(e) => {
-                  (e.target as HTMLImageElement).src = "/fallback-image.png";
-                }}
-                unoptimized={false} 
               />
             </motion.div>
           </AnimatePresence>

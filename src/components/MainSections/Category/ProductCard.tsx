@@ -32,11 +32,7 @@ export default function ProductCard({
   className?: string;
   textSize?: string;
 }) {
-  const [isLoaded, setIsLoaded] = useState(false);
-  const fallbackImage = product.image.split(".svg")[0] + "-fallback.png";
-  useEffect(() => {
-    setIsLoaded(true);
-  }, []);
+
 
   return (
     <BouncyMotion
@@ -67,23 +63,15 @@ export default function ProductCard({
           className="flex flex-col relative"
         >
           <figure className="w-[85%] aspect-[4/5] z-20 relative mx-auto">
-            <Image
+            <img
               src={product.image}
               alt={`${product.name} product image`}
-              fill
               sizes="(max-width: 480px) 100vw, (max-width: 768px) 75vw, (max-width: 1200px) 50vw, 25vw"
-              className="object-contain rounded-lg"
+              className="object-contain rounded-lg w-full h-full"
               style={{
                 opacity: 1,
                 transform: "scale(1)",
                 transition: "all 0.5s ease-in-out",
-              }}
-              placeholder="blur"
-              blurDataURL={fallbackImage}
-              unoptimized={false}
-              priority
-              onError={(e) => {
-                (e.target as HTMLImageElement).src = fallbackImage;
               }}
               aria-label={`${product.name} - GLOW WORM CHIPS Premium Snacks`}
             />

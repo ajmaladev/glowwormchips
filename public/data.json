@@ -5,7 +5,7 @@
         "name": "Biscuits",
         "slug": "biscuits",
         "title": "BISCUIT",
-        "image": "/category/glowwormchips-biscuits.svg",
+        "image": "/category/glowwormchips-biscuits.webp",
         "alt": "Authentic homemade Kerala biscuits assortment",
         "description": "Delicious Biscuits: A Bite for Every Craving including playful letter biscuits, soft egg drop biscuits, rich cashew biscuits, fun teddy biscuits, crispy coin biscuits, and classic ring biscuits. Perfect for snacking, sharing, or pairing with tea, each biscuit is crafted to satisfy with unique flavors and textures. Discover the joy of each bite!",
         "short_description":"Our biscuit collection brings together delightful treats for everyone",
@@ -18,7 +18,7 @@
         "name": "Dry Fruits",
         "slug": "dry-fruits",
         "title": "DRY FRUITS",
-        "image": "/category/glowwormchips-dry-fruits.svg",
+        "image": "/category/glowwormchips-dry-fruits.webp",
         "alt": "Premium South Indian dried fruits and nuts selection",
         "description": "Indulge in our selection of premium dry fruits, including munakka, black raisins, Irani kismis, dried pineapple, dried mango, and coconut dry chips. boost of wholesome nutrition—perfect for snacking, cooking, or adding a nutritious twist to any meal. Enjoy nature’s finest in every bite!",
         "short_description":"Each variety is carefully sourced to bring you natural sweetness, rich flavors",
@@ -31,7 +31,7 @@
         "name": "Banana Chips",
         "slug": "banana-chips",
         "title": "Banana Chips",
-        "image": "/category/glowwormchips-banana-chips.svg",
+        "image": "/category/glowwormchips-banana-chips.webp",
         "alt": "Crispy golden Malabar banana chips",
         "description": "Thinly sliced and fried to a golden perfection, each chip offers the authentic flavor of Kerala in every bite. These savory snacks, made from carefully selected bananas, capture the essence of our homeland's culinary tradition. Perfect for an afternoon snack or a crunchy side, our Kerala banana chips are sure to delight.",
         "short_description": "Discover the traditional taste of Kerala with our classic banana chips!",
@@ -44,7 +44,7 @@
         "name": "Murukku",
         "slug": "murukku",
         "title": "MURUKKU",
-        "image": "/category/glowwormchips-murukku.svg",
+        "image": "/category/glowwormchips-murukku.webp",
         "alt": "Handcrafted South Indian spiral crunchy snacks",
         "description": "Try our delicious murukku varieties. From the classic Malabar murukku and garlic-infused twists to tangy tomato murukku, crispy ring murukku, and spicy masala options, each bite offers a perfect blend of crunch and flavor. A true taste of the South in every munch!",
         "short_description":"Experience the rich tradition of Indian snacks with our delicious murukku",
@@ -57,7 +57,7 @@
         "name": "Tapioca chips",
         "slug": "tapioca-chips",
         "title": "TAPIOCA",
-        "image": "/category/glowwormchips-tapioca-chips.svg",
+        "image": "/category/glowwormchips-tapioca-chips.webp",
         "alt": "Fresh Kerala cassava crisps collection",
         "description": "Enjoy our irresistible range of tapioca snacks, from spicy and salty tapioca sticks to zesty chili and tomato-flavored tapioca chips. Each variety is made to deliver the perfect crunch and burst of flavor, satisfying cravings with every bite. Discover your favorite in this bold, crispy collection!",
         "short_description":"Chips & Sticks, Crunchy, Bold and Flavor-Packed",
@@ -70,7 +70,7 @@
         "name": "More",
         "slug": "many-others",
         "title": "MANY OTHERS",
-        "image": "/category/glowwormchips-more-categories.svg",
+        "image": "/category/glowwormchips-more-categories.webp",
         "alt": "Diverse artisanal Kerala snack varieties",
         "description": "Explore our \"Many Others\" collection, where diverse flavors meet delightful crunch. From tangy sour potato chips and refreshing mint potato chips to crispy bitter gourd chips, sweet jackfruit chips, and the classic Kerala mixture, each snack offers a taste adventure that's anything but ordinary. Perfect for those who crave variety and excitement in every bite!",
         "short_description":"Diverse Flavors, Delightful Crunch, and Excitement in Every Bite",
@@ -83,7 +83,7 @@
       {
         "id": 10001,
         "name": "Banana chips",
-        "image": "/category/banana-chips/glowwormchips-banana-chips-banana-chips-bakery-snacks-palakkad-kerala-india.svg",
+        "image": "/category/banana-chips/glowwormchips-banana-chips-banana-chips-bakery-snacks-palakkad-kerala-india.webp",
         "alt": "Fresh handcrafted Kerala plantain chips",
         "categoryId": 23456,
         "categorySlug": "banana-chips",
@@ -92,7 +92,7 @@
       {
         "id": 10002,
         "name": "Fruit Banana chips",
-        "image": "/category/banana-chips/glowwormchips-banana-chips-fruit-banana-chips-bakery-snacks-palakkad-kerala-india.svg",
+        "image": "/category/banana-chips/glowwormchips-banana-chips-fruit-banana-chips-bakery-snacks-palakkad-kerala-india.webp",
         "alt": "Sweet fruit-infused Malabar banana crisps",
         "categoryId": 23456,
         "categorySlug": "banana-chips"
@@ -100,7 +100,7 @@
       {
         "id": 10003,
         "name": "Four Cut Banana Chips",
-        "image": "/category/banana-chips/glowwormchips-four-cut-banana-chips-banana-chips-bakery-snacks-palakkad-kerala-india.svg",
+        "image": "/category/banana-chips/glowwormchips-four-cut-banana-chips-banana-chips-bakery-snacks-palakkad-kerala-india.webp",
         "alt": "Uniquely cut South Indian plantain wafers",
         "categoryId": 23456,
         "categorySlug": "banana-chips"
@@ -108,7 +108,7 @@
       {
         "id": 10004,
         "name": "Jaggery Banana chips",
-        "image": "/category/banana-chips/glowwormchips-banana-chips-jaggery-banana-chips-bakery-snacks-palakkad-kerala-india.svg",
+        "image": "/category/banana-chips/glowwormchips-banana-chips-jaggery-banana-chips-bakery-snacks-palakkad-kerala-india.webp",
         "alt": "Sweet palm jaggery coated banana crisps",
         "categoryId": 23456,
         "categorySlug": "banana-chips"
@@ -116,7 +116,7 @@
       {
         "id": 10005,
         "name": "Ripe Banana chips",
-        "image": "/category/banana-chips/glowwormchips-banana-chips-ripe-banana-chips-bakery-snacks-palakkad-kerala-india.svg",
+        "image": "/category/banana-chips/glowwormchips-banana-chips-ripe-banana-chips-bakery-snacks-palakkad-kerala-india.webp",
         "alt": "Golden sweet ripe plantain wafers",
         "categoryId": 23456,
         "categorySlug": "banana-chips"
@@ -124,7 +124,7 @@
       {
         "id": 10006,
         "name": "Chilly Banana Chips",
-        "image": "/category/banana-chips/glowwormchips-spicy-banana-chips-chilly-banana-chips-bakery-snacks-palakkad-kerala-india.svg",
+        "image": "/category/banana-chips/glowwormchips-spicy-banana-chips-chilly-banana-chips-bakery-snacks-palakkad-kerala-india.webp",
         "alt": "Spicy red chili flavored banana crisps",
         "categoryId": 23456,
         "categorySlug": "banana-chips"
@@ -132,7 +132,7 @@
       {
         "id": 10007,
         "name": "Malabar Murukku",
-        "image": "/category/murukku/glowwormchips-top-best-murukku-snacks-malabar-murukku-small-snack-bakery-snacks-palakkad-kerala-india.svg",
+        "image": "/category/murukku/glowwormchips-top-best-murukku-snacks-malabar-murukku-small-snack-bakery-snacks-palakkad-kerala-india.webp",
         "alt": "Authentic Malabar style spiral snacks",
         "categoryId": 34567,
         "categorySlug": "murukku",
@@ -142,7 +142,7 @@
       {
         "id": 10008,
         "name": "Garlic Murukku",
-        "image": "/category/murukku/glowwormchips-top-best-murukku-snacks-garlic-murukku-snack-bakery-snacks-palakkad-kerala-india.svg",
+        "image": "/category/murukku/glowwormchips-top-best-murukku-snacks-garlic-murukku-snack-bakery-snacks-palakkad-kerala-india.webp",
         "alt": "Aromatic garlic flavored spiral crisps",
         "categoryId": 34567,
         "categorySlug": "murukku"
@@ -150,7 +150,7 @@
       {
         "id": 10009,
         "name": "Tomato Murukku",
-        "image": "/category/murukku/glowwormchips-top-best-murukku-snacks-ripe-tomato-murukku-snack-bakery-snacks-palakkad-kerala-India.svg",
+        "image": "/category/murukku/glowwormchips-top-best-murukku-snacks-ripe-tomato-murukku-snack-bakery-snacks-palakkad-kerala-India.webp",
         "alt": "Tangy tomato seasoned crunchy spirals",
         "categoryId": 34567,
         "categorySlug": "murukku"
@@ -158,7 +158,7 @@
       {
         "id": 10010,
         "name": "Ring Murukku",
-        "image": "/category/murukku/glowwormchips-top-best-murukku-snacks-ring-murukku-snack-bakery-snacks-palakkad-kerala-India.svg",
+        "image": "/category/murukku/glowwormchips-top-best-murukku-snacks-ring-murukku-snack-bakery-snacks-palakkad-kerala-India.webp",
         "alt": "Circular shaped crispy murukku rings",
         "categoryId": 34567,
         "categorySlug": "murukku"
@@ -166,7 +166,7 @@
       {
         "id": 10011,
         "name": "Masala Ring Murukku",
-        "image": "/category/murukku/glowwormchips-top-best-murukku-snacks-masala-ring-murukku-snack-bakery-snacks-palakkad-kerala-india.svg",
+        "image": "/category/murukku/glowwormchips-top-best-murukku-snacks-masala-ring-murukku-snack-bakery-snacks-palakkad-kerala-india.webp",
         "alt": "Spice-blended crunchy murukku circles",
         "categoryId": 34567,
         "categorySlug": "murukku"
@@ -174,7 +174,7 @@
       {
         "id": 10012,
         "name": "Garlic Murukku small",
-        "image": "/category/murukku/glowwormchips-top-best-murukku-snacks-garlic-murukku-small-snack-bakery-snacks-palakkad-kerala-india.svg",
+        "image": "/category/murukku/glowwormchips-top-best-murukku-snacks-garlic-murukku-small-snack-bakery-snacks-palakkad-kerala-india.webp",
         "alt": "Mini garlic infused spiral snacks",
         "categoryId": 34567,
         "categorySlug": "murukku"
@@ -182,7 +182,7 @@
       {
         "id": 10013,
         "name": "Malabar Murukku small",
-        "image": "/category/murukku/glowwormchips-top-best-murukku-snacks-malabar-murukku-snack-bakery-snacks-palakkad-kerala-india.svg",
+        "image": "/category/murukku/glowwormchips-top-best-murukku-snacks-malabar-murukku-snack-bakery-snacks-palakkad-kerala-india.webp",
         "alt": "Petite Malabar style crunchy spirals",
         "categoryId": 34567,
         "categorySlug": "murukku"
@@ -190,7 +190,7 @@
       {
         "id": 10014,
         "name": "Spicy Tapioca Sticks",
-        "image": "/category/tapioca/glowwormchips-top-best-tapioca-chips-tomato-tapioca-sticks-chips-snack-bakery-snacks-palakkad-kerala-india.svg",
+        "image": "/category/tapioca/glowwormchips-top-best-tapioca-chips-tomato-tapioca-sticks-chips-snack-bakery-snacks-palakkad-kerala-india.webp",
         "alt": "Fiery cassava stick snacks",
         "categoryId": 45678,
         "categorySlug": "tapioca-chips"
@@ -198,7 +198,7 @@
       {
         "id": 10015,
         "name": "Salty Tapioca Stick",
-        "image": "/category/tapioca/glowwormchips-top-best-tapioca-chips-salty-tapioca-sticks-chips-snack-bakery-snacks-palakkad-kerala-india.svg",
+        "image": "/category/tapioca/glowwormchips-top-best-tapioca-chips-salty-tapioca-sticks-chips-snack-bakery-snacks-palakkad-kerala-india.webp",
         "alt": "Sea salted crispy cassava sticks",
         "categoryId": 45678,
         "categorySlug": "tapioca-chips"
@@ -206,7 +206,7 @@
       {
         "id": 10016,
         "name": "Tapioca Chips Chilly",
-        "image": "/category/tapioca/glowwormchips-top-best-tapioca-chips-spicy-tapioca-chilly-chips-snack-bakery-snacks-palakkad-kerala-india.svg",
+        "image": "/category/tapioca/glowwormchips-top-best-tapioca-chips-spicy-tapioca-chilly-chips-snack-bakery-snacks-palakkad-kerala-india.webp",
         "alt": "Hot chili flavored cassava wafers",
         "categoryId": 45678,
         "categorySlug": "tapioca-chips"
@@ -214,7 +214,7 @@
       {
         "id": 10017,
         "name": "Salty Tapioca Chips",
-        "image": "/category/tapioca/glowwormchips-top-best-tapioca-chips-salty-tapioca-chips-snack-bakery-snacks-palakkad-kerala-india.svg",
+        "image": "/category/tapioca/glowwormchips-top-best-tapioca-chips-salty-tapioca-chips-snack-bakery-snacks-palakkad-kerala-india.webp",
         "alt": "Classic salted tapioca crisps",
         "categoryId": 45678,
         "categorySlug": "tapioca-chips"
@@ -222,7 +222,7 @@
       {
         "id": 10018,
         "name": "Tomato Tapioca Chips",
-        "image": "/category/tapioca/glowwormchips-top-best-tapioca-chips-tomato-tapioca-chips-snack-bakery-snacks-palakkad-kerala-india.svg",
+        "image": "/category/tapioca/glowwormchips-top-best-tapioca-chips-tomato-tapioca-chips-snack-bakery-snacks-palakkad-kerala-india.webp",
         "alt": "Zesty tomato flavored cassava chips",
         "categoryId": 45678,
         "categorySlug": "tapioca-chips",
@@ -231,7 +231,7 @@
       {
         "id": 10019,
         "name": "Spicy Tapioca Chips",
-        "image": "/category/tapioca/glowwormchips-top-best-tapioca-chips-spicy-tapioca-chips-snack-bakery-snacks-palakkad-kerala-india.svg",
+        "image": "/category/tapioca/glowwormchips-top-best-tapioca-chips-spicy-tapioca-chips-snack-bakery-snacks-palakkad-kerala-india.webp",
         "alt": "Peppery seasoned tapioca wafers",
         "categoryId": 45678,
         "categorySlug": "tapioca-chips",
@@ -241,7 +241,7 @@
       {
         "id": 10020,
         "name": "Munakka",
-        "image": "/category/dry-fruits/glowwormchips-dry-fruits-munakka-bakery-snacks-palakkad-kerala-india.svg",
+        "image": "/category/dry-fruits/glowwormchips-dry-fruits-munakka-bakery-snacks-palakkad-kerala-india.webp",
         "alt": "Premium black seedless raisins",
         "categoryId": 15789,
         "categorySlug": "dry-fruits"
@@ -249,7 +249,7 @@
       {
         "id": 10021,
         "name": "Black Raisins",
-        "image": "/category/dry-fruits/glowwormchips-dry-fruits-black-raisins-bakery-snacks-palakkad-kerala-india-1.svg",
+        "image": "/category/dry-fruits/glowwormchips-dry-fruits-black-raisins-bakery-snacks-palakkad-kerala-india-1.webp",
         "alt": "Sun-dried dark grape raisins",
         "categoryId": 15789,
         "categorySlug": "dry-fruits"
@@ -257,7 +257,7 @@
       {
         "id": 10022,
         "name": "Irani Kismis",
-        "image": "/category/dry-fruits/glowwormchips-dry-fruits-irani-kismis-bakery-snacks-palakkad-kerala-India.svg",
+        "image": "/category/dry-fruits/glowwormchips-dry-fruits-irani-kismis-bakery-snacks-palakkad-kerala-India.webp",
         "alt": "Imported Persian golden raisins",
         "categoryId": 15789,
         "categorySlug": "dry-fruits",
@@ -266,7 +266,7 @@
       {
         "id": 10024,
         "name": "Dry Pineapple",
-        "image": "/category/dry-fruits/glowwormchips-dry-fruits-dry-pineapple-bakery-snacks-palakkad-kerala-India-1.svg",
+        "image": "/category/dry-fruits/glowwormchips-dry-fruits-dry-pineapple-bakery-snacks-palakkad-kerala-India-1.webp",
         "alt": "Dehydrated sweet pineapple chunks",
         "categoryId": 15789,
         "categorySlug": "dry-fruits"
@@ -274,7 +274,7 @@
       {
         "id": 10025,
         "name": "Dry Mango",
-        "image": "/category/dry-fruits/glowwormchips-dryfruits-dry-mango-bakery-snacks-palakkad-kerala-India.svg",
+        "image": "/category/dry-fruits/glowwormchips-dryfruits-dry-mango-bakery-snacks-palakkad-kerala-India.webp",
         "alt": "Sun-dried tropical mango slices",
         "categoryId": 15789,
         "categorySlug": "dry-fruits"
@@ -282,7 +282,7 @@
       {
         "id": 10026,
         "name": "Coconut Dry Chips",
-        "image": "/category/dry-fruits/glowwormchips-dry-fruits-coconut-dry-chips-bakery-snacks-palakkad-kerala-india.svg",
+        "image": "/category/dry-fruits/glowwormchips-dry-fruits-coconut-dry-chips-bakery-snacks-palakkad-kerala-india.webp",
         "alt": "Crunchy dehydrated coconut slivers",
         "categoryId": 15789,
         "categorySlug": "dry-fruits"
@@ -290,7 +290,7 @@
       {
         "id": 10027,
         "name": "Cashew Biscuits",
-        "image": "/category/biscuits/glowwormchips-top-best-biscuits-cashew-cashews-biscuits-biscuit-snack-bakery-snacks-palakkad-kerala-india-1.svg",
+        "image": "/category/biscuits/glowwormchips-top-best-biscuits-cashew-cashews-biscuits-biscuit-snack-bakery-snacks-palakkad-kerala-india-1.webp",
         "alt": "Buttery cashew topped cookies",
         "categoryId": 10234,
         "categorySlug": "biscuits"
@@ -298,7 +298,7 @@
       {
         "id": 10028,
         "name": "Egg Drop Biscuits",
-        "image": "/category/biscuits/glowwormchips-top-best-biscuits-egg-drop-biscuits-biscuit-snack-bakery-snacks-palakkad-kerala-india-1.svg",
+        "image": "/category/biscuits/glowwormchips-top-best-biscuits-egg-drop-biscuits-biscuit-snack-bakery-snacks-palakkad-kerala-india-1.webp",
         "alt": "Light and airy egg-based cookies",
         "categoryId": 10234,
         "categorySlug": "biscuits"
@@ -306,7 +306,7 @@
       {
         "id": 10029,
         "name": "Letter Biscuits",
-        "image": "/category/biscuits/glowwormchips-top-best-biscuits-letters-biscuits-snack-bakery-snacks-palakkad-kerala-india-1.svg",
+        "image": "/category/biscuits/glowwormchips-top-best-biscuits-letters-biscuits-snack-bakery-snacks-palakkad-kerala-india-1.webp",
         "alt": "Alphabet shaped learning cookies",
         "categoryId": 10234,
         "categorySlug": "biscuits"
@@ -314,7 +314,7 @@
       {
         "id": 10030,
         "name": "Teddy Biscuits",
-        "image": "/category/biscuits/glowwormchips-top-best-biscuits-teddy-biscuits-biscuit-snack-bakery-snacks-palakkad-kerala-india1.svg",
+        "image": "/category/biscuits/glowwormchips-top-best-biscuits-teddy-biscuits-biscuit-snack-bakery-snacks-palakkad-kerala-india1.webp",
         "alt": "Bear shaped fun children cookies",
         "categoryId": 10234,
         "categorySlug": "biscuits"
@@ -322,7 +322,7 @@
       {
         "id": 10031,
         "name": "Coin Biscuits",
-        "image": "/category/biscuits/glowwormchips-top-best-biscuits-coin-biscuits-biscuit-snack-bakery-snacks-palakkad-kerala-india-1.svg",
+        "image": "/category/biscuits/glowwormchips-top-best-biscuits-coin-biscuits-biscuit-snack-bakery-snacks-palakkad-kerala-india-1.webp",
         "alt": "Round golden butter cookies",
         "categoryId": 10234,
         "categorySlug": "biscuits"
@@ -330,7 +330,7 @@
       {
         "id": 10032,
         "name": "Ring Biscuits",
-        "image": "/category/biscuits/glowwormchips-top-best-biscuits-ring-biscuits-biscuit-snack-bakery-snacks-palakkad-kerala-india-1.svg",
+        "image": "/category/biscuits/glowwormchips-top-best-biscuits-ring-biscuits-biscuit-snack-bakery-snacks-palakkad-kerala-india-1.webp",
         "alt": "Circular crispy tea cookies",
         "categoryId": 10234,
         "categorySlug": "biscuits"
@@ -338,7 +338,7 @@
       {
         "id": 10033,
         "name": "Jackfruit chips",
-        "image": "/category/many-others/glowwormchips-other-chips-jack-fruit-chips-bakery-snacks-palakkad-kerala-india.svg",
+        "image": "/category/many-others/glowwormchips-other-chips-jack-fruit-chips-bakery-snacks-palakkad-kerala-india.webp",
         "alt": "Sweet yellow jackfruit crisps",
         "categoryId": 56789,
         "categorySlug": "many-others",
@@ -347,7 +347,7 @@
       {
         "id": 10034,
         "name": "Kerala Mixture",
-        "image": "/category/many-others/glowwormchips-other-chips-kerala-mixture-bakery-snacks-palakkad-kerala-india.svg",
+        "image": "/category/many-others/glowwormchips-other-chips-kerala-mixture-bakery-snacks-palakkad-kerala-india.webp",
         "alt": "Spicy mixed savory snack blend",
         "categoryId": 56789,
         "categorySlug": "many-others",
@@ -356,7 +356,7 @@
       {
         "id": 10035,
         "name": "Bitter gourd chips",
-        "image": "/category/many-others/glowwormchips-other-chips-bitter-gourd-chips-bakery-snacks-palakkad-kerala-india.svg",
+        "image": "/category/many-others/glowwormchips-other-chips-bitter-gourd-chips-bakery-snacks-palakkad-kerala-india.webp",
         "alt": "Uniquely flavored karela crisps",
         "categoryId": 56789,
         "categorySlug": "many-others"
@@ -364,7 +364,7 @@
       {
         "id": 10036,
         "name": "Mint potato chips",
-        "image": "/category/many-others/glowwormchips-other-chips-mint-potato-chips-bakery-snacks-palakkad-kerala-india.svg",
+        "image": "/category/many-others/glowwormchips-other-chips-mint-potato-chips-bakery-snacks-palakkad-kerala-india.webp",
         "alt": "Fresh mint flavored potato wafers",
         "categoryId": 56789,
         "categorySlug": "many-others"
@@ -372,7 +372,7 @@
       {
         "id": 10037,
         "name": "Sour Potato chips",
-        "image": "/category/many-others/glowwormchips-other-chips-sour-potato-chips-bakery-snacks-palakkad-kerala-india-1.svg",
+        "image": "/category/many-others/glowwormchips-other-chips-sour-potato-chips-bakery-snacks-palakkad-kerala-india-1.webp",
         "alt": "Tangy citrus potato crisps",
         "categoryId": 56789,
         "categorySlug": "many-others"
