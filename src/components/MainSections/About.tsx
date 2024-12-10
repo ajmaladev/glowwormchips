@@ -1,13 +1,7 @@
 import Image from "next/image";
-import { Button } from "../ui/button";
-import { WHATSAPP_MESSAGE } from "@/lib/constants";
 import { AboutButtons } from "../Globals/AboutButtons";
 
 export default function About() {
-  const handleWhatsAppClick = () => {
-    const encodedMessage = encodeURIComponent(WHATSAPP_MESSAGE);
-    window.open(`https://wa.me/919895193123?text=${encodedMessage}`, "_blank");
-  };
 
   return (
     <section

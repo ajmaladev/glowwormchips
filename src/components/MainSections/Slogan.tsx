@@ -24,7 +24,7 @@ export default function Slogan() {
       <div 
         className="absolute inset-0"
         style={{
-          backgroundImage: `url(/glowwormchips-category-slogan-background-bakery-snacks-palakkad-kerala-india.svg)`,
+          backgroundImage: `url(/glowwormchips-category-slogan-background-bakery-snacks-palakkad-kerala-india.webp)`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
         }}
