@@ -67,20 +67,16 @@ export default function ProductCard({
           className="flex flex-col relative"
         >
           <figure className="w-[85%] aspect-[4/5] z-20 relative mx-auto">
-            <Image
+            <img
               src={product.image}
               alt={`${product.name} product image`}
-              fill
               sizes="(max-width: 480px) 100vw, (max-width: 768px) 75vw, (max-width: 1200px) 50vw, 25vw"
-              className="object-contain rounded-lg"
+              className="object-contain rounded-lg w-full h-full"
               style={{
                 opacity: 1,
                 transform: "scale(1)",
                 transition: "all 0.5s ease-in-out",
               }}
-              placeholder="blur"
-              blurDataURL={fallbackImage}
-              priority
               onError={(e) => {
                 (e.target as HTMLImageElement).src = fallbackImage;
               }}
