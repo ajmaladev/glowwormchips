@@ -19,3 +19,5 @@ export const organizationInfo = {
     // Add other social media links
   ],
 }; 
+
+export const NEXT_PUBLIC_BASE_PATH = '/glowormchips';

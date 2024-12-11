@@ -1,18 +1,16 @@
-import type { NextConfig } from "next";
-
+/** @type {import('next').NextConfig} */
 const repoName = 'glowwormchips';
 
-const nextConfig: NextConfig = {
+const nextConfig = {
   // Enable React strict mode
-  assetPrefix:  `/${repoName}/`,
-  basePath:  `/${repoName}`,
+  // assetPrefix: `/${repoName}/`,
+  // basePath: `/${repoName}`,
   reactStrictMode: true,
   trailingSlash: true,
-  output: "export",
-  // Image optimization settings
+  // output: "export",
+
   images: {
     unoptimized: true,
-    // Modern device sizes for responsive images
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048],
     imageSizes: [16, 32, 48, 64, 96, 128, 256],
     formats: ['image/webp'],
@@ -45,7 +43,6 @@ const nextConfig: NextConfig = {
     ];
   },
 
-  // Handle common redirects for SEO
   async redirects() {
     return [
       {
@@ -56,16 +53,11 @@ const nextConfig: NextConfig = {
     ];
   },
 
-  // Remove X-Powered-By header
   poweredByHeader: false,
-
-  // Enable compression
   compress: true,
 
   experimental: {
-    // Optimize for modern browsers
     optimizePackageImports: ['react-icons', 'lucide-react', '@radix-ui/react-icons'],
-
   },
 };
 
