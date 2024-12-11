@@ -11,24 +11,30 @@ const cards = [
     title: "Premium Gourmet Potato Chips",
     description:
       "Artisanal Premium Potato Chips - Handcrafted in Small Batches with Natural Ingredients",
-    image:
-      "/carousel/glowwormchips-adverticement 1-every-chip-tell-a-tale-of-flavor--snack-packet-bakery-snacks-palakkad-kerala-india.webp",
+    image: {
+      webp: "/carousel/glowwormchips-adverticement-1-every-chip-tell-a-tale-of-flavor--snack-packet-bakery-snacks-palakkad-kerala-india.webp",
+      png: "/carousel/glowwormchips-adverticement-1-every-chip-tell-a-tale-of-flavor--snack-packet-bakery-snacks-palakkad-kerala-india.png"
+    }
   },
   {
     id: 2,
     title: "Premium Quality Ingredients",
     description:
       "Organic Premium Ingredients - Sourced from Local Farmers for Superior Quality Snacks",
-    image:
-      "/carousel/glowwormchips-adverticement-2-we-choose-the-finest-for-you-snack-packet-bakery-tapioca-snacks-palakkad-kerala-india.webp",
+    image: {
+      webp: "/carousel/glowwormchips-adverticement-2-we-choose-the-finest-for-you-snack-packet-bakery-tapioca-snacks-palakkad-kerala-india.webp",
+      png: "/carousel/glowwormchips-adverticement-2-we-choose-the-finest-for-you-snack-packet-bakery-tapioca-snacks-palakkad-kerala-india.png"
+    }
   },
   {
     id: 3,
     title: "Artisanal Snack Collection",
     description:
       "Gourmet Artisanal Snacks - Crafted with Love for an Exceptional Snacking Experience",
-    image:
-      "/carousel/glowwormchips-adverticement-3-every-snack-sparks-joy-snack-packet-biscuits-bakery-snacks-palakkad-kerala-india.webp",
+    image: {
+      webp: "/carousel/glowwormchips-adverticement-3-every-snack-sparks-joy-snack-packet-biscuits-bakery-snacks-palakkad-kerala-india.webp",
+      png: "/carousel/glowwormchips-adverticement-3-every-snack-sparks-joy-snack-packet-biscuits-bakery-snacks-palakkad-kerala-india.png"
+    }
   },
 ];
 
@@ -78,20 +84,31 @@ export function MainCarousel() {
             >
               <meta itemProp="position" content={`${currentIndex + 1}`} />
               <meta itemProp="name" content={cards[currentIndex].title} />
-              <Image
-                src={cards[currentIndex].image}
-                alt={cards[currentIndex].description}
-                title={cards[currentIndex].title}
-                className="w-full h-full object-cover pointer-events-none"
-                sizes="(max-width: 480px) 100vw, (max-width: 768px) 75vw, (max-width: 1200px) 50vw, 25vw"
-                width={1920} 
-                height={1080} 
-                priority={currentIndex === 0}
-                placeholder="blur"
-                blurDataURL={cards[currentIndex].image}
-                draggable="false"
-                itemProp="contentUrl"
-              />
+              <picture>
+                <source
+                  media="(min-width: 768px)"
+                  srcSet={cards[currentIndex].image.png}
+                  type="image/png"
+                />
+                <source
+                  srcSet={cards[currentIndex].image.webp}
+                  type="image/webp"
+                />
+                <Image
+                  src={cards[currentIndex].image.png}
+                  alt={cards[currentIndex].description}
+                  title={cards[currentIndex].title}
+                  className="w-full h-full object-cover pointer-events-none"
+                  sizes="(max-width: 480px) 100vw, (max-width: 768px) 75vw, (max-width: 1200px) 50vw, 25vw"
+                  width={1920} 
+                  height={1080} 
+                  priority={currentIndex === 0}
+                  placeholder="blur"
+                  blurDataURL={cards[currentIndex].image.webp}
+                  draggable="false"
+                  itemProp="contentUrl"
+                />
+              </picture>
             </motion.div>
           </AnimatePresence>
         </div>
