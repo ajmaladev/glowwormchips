@@ -72,7 +72,7 @@ export default function NavBar() {
           aria-label="Go to homepage"
         >
           <Image
-            src="/glowwormchips.svg"
+            src="/glowwormchips.webp"
             alt="Glow Worm Chips Logo"
             width={96}
             height={64}

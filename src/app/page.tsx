@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     siteName: 'GLOW WORM CHIPS',
     images: [
       {
-        url: '/glowwormchips.svg',
+        url: '/glowwormchips.webp',
         width: 1200,
         height: 630,
         alt: 'GLOW WORM CHIPS Premium Snacks'
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'GLOW WORM CHIPS - Premium Kerala Snacks',
     description: 'Buy authentic Kerala banana chips online from GLOW WORM CHIPS Palakkad. Fresh, handmade snacks delivered across India.',
-    images: ['/glowwormchips.svg']
+    images: ['/glowwormchips.webp']
   },
   alternates: {
     canonical: '/',

@@ -33,7 +33,7 @@ export default function MobileSheetContent() {
             <SheetClose asChild>
               <Link href="/" className="flex items-center mt-10" aria-label="Go to homepage">
                 <Image
-                  src="/glowwormchips.svg"
+                  src="/glowwormchips.webp"
                   alt="Glow Worm Logo"
                   width={158}
                   height={98}
