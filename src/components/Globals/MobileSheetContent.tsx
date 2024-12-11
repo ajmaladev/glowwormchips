@@ -35,10 +35,11 @@ export default function MobileSheetContent() {
                 <Image
                   src="/glowwormchips.webp"
                   alt="Glow Worm Logo"
-                  width={158}
-                  height={98}
-                  className="cursor-pointer"
+                  width={1000}
+                  height={1000}
+                  className="cursor-pointer w-[158px] h-[98px]"
                   priority
+                  quality={100}
                 />
               </Link>
             </SheetClose>

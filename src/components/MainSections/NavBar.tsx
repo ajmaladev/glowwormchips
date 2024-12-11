@@ -1,13 +1,9 @@
-
-"use client"
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import { FiSearch } from "react-icons/fi";
 import { Drawer, DrawerTrigger } from "@/components/ui/drawer";
-import {
-  Sheet,
-  SheetTrigger,
-} from "@/components/ui/sheet";
+import { Sheet, SheetTrigger } from "@/components/ui/sheet";
 import SearchContent from "./SearchContent";
 import MobileSheetContent from "../Globals/MobileSheetContent";
 
@@ -27,13 +23,13 @@ export default function NavBar() {
   const navStructuredData = {
     "@context": "https://schema.org",
     "@type": "SiteNavigationElement",
-    "name": "Main Navigation",
-    "url": "https://glowwormchips.com",
-    "about": "Navigation links for GLOW WORM CHIPS Premium Snacks website",
-    "mainEntityOfPage": {
+    name: "Main Navigation",
+    url: "https://glowwormchips.com",
+    about: "Navigation links for GLOW WORM CHIPS Premium Snacks website",
+    mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": "https://glowwormchips.com"
-    }
+      "@id": "https://glowwormchips.com",
+    },
   };
 
   return (
@@ -74,10 +70,11 @@ export default function NavBar() {
           <Image
             src="/glowwormchips.webp"
             alt="Glow Worm Chips Logo"
-            width={96}
-            height={64}
-            className="cursor-pointer"
+            width={1000}
+            height={1000}
+            className="cursor-pointer w-[96px] h-[64px]"
             priority
+            quality={100}
           />
         </Link>
 
