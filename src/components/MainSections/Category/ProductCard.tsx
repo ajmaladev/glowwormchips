@@ -2,8 +2,7 @@
 import Image from "next/image";
 import { Product } from "../../../../type";
 import { BouncyMotion } from "../../Globals/BouncyMotion";
-import { useEffect, useState } from "react";
-import Link from "next/link";
+import {  useState } from "react";
 import {
   Dialog,
   DialogContent,
@@ -56,10 +55,11 @@ export default function ProductCard({
   className?: string;
   textSize?: string;
 }) {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <BouncyMotion>
-      <Dialog>
-        <DialogTrigger asChild>
+      <Dialog open={isOpen} onOpenChange={setIsOpen}>
+        <DialogTrigger asChild onClick={() => setIsOpen(true)}>
           <article
             className={`pt-6 cursor-pointer ${className ? className : ""}`}
             aria-label={`Product: ${product.name}`}
@@ -109,6 +109,18 @@ export default function ProductCard({
         </DialogTrigger>
 
         <DialogContent className="sm:max-w-[500px] md:max-w-[600px] lg:max-w-[800px] h-[85vh] bg-gradient-to-br from-amber-50 via-white to-orange-50/30 p-0 border-none overflow-hidden">
+          {/* Updated Close Button */}
+          <button
+            onClick={() => setIsOpen(false)}
+            className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground z-50"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+            <span className="sr-only">Close</span>
+          </button>
+
           {/* Enhanced Decorative Background */}
           <div className="absolute inset-0">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-amber-100/40 via-white to-orange-50/30" />
